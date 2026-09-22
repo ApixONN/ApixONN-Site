@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ApixONN</title>
-<meta name="description" content="ApixONN builds business software in Qatar: an ERP that runs your operations, and Dalil, an AI assistant that answers from your company's own documents.">
+<meta name="description" content="ApixONN is the business platform built in Qatar: an ERP that runs finance, HR, payroll, projects, inventory and property — and Dalil, an AI assistant that answers from your company's own documents, citing the page. Arabic & English.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="ApixONN">
-<meta property="og:description" content="Software that runs your business and answers your questions.">
+<meta property="og:description" content="Run your business, and get answers from it. An ERP + Dalil, an AI assistant that answers from your own documents. Arabic & English, made in Qatar.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://apixonn.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,182 +15,238 @@
 <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200..700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1A1942; --indigo:#3433C4; --indigo-2:#4B4AE0; --peri:#93A3FB; --mist:#E9EDFF;
-    --bg:#FAFAFE; --surface:#FFFFFF; --surface-2:#F4F5FD;
-    --fg:#1A1942; --fg-muted:#565591; --fg-faint:#8B8AB5;
-    --border:#E6E7F5; --border-strong:#D3D5EE;
-    --hero-1:#201F52; --hero-2:#14133A; --on-hero:#EDEEFF; --on-hero-muted:#AEB0E6;
-    --shadow:0 1px 2px rgba(26,25,66,.04), 0 12px 32px -12px rgba(26,25,66,.14);
-    --shadow-lg:0 24px 60px -24px rgba(20,19,58,.45);
-    --radius:18px;
+    --ink:#141338; --indigo:#3433C4; --indigo-2:#4B4AE0; --peri:#93A3FB; --peri-2:#B7C1FF; --mist:#EBEEFF;
+    --bg:#FBFBFE; --surface:#FFFFFF; --surface-2:#F4F5FD; --surface-3:#EEF0FB;
+    --fg:#141338; --fg-2:#3C3B66; --fg-muted:#57568A; --fg-faint:#8988B4;
+    --border:#E7E8F6; --border-2:#D5D6EE;
+    --d1:#1D1C4E; --d2:#100F30; --d3:#0A0922;                 /* dark hero grounds */
+    --on-d:#EEF0FF; --on-d-2:#C4C7EE; --on-d-faint:#9C9FD4;
+    --ok:#16A34A; --ok-bg:#DCFCE7; --warn:#D97706;
+    --shadow-sm:0 1px 2px rgba(20,19,56,.05), 0 8px 20px -10px rgba(20,19,56,.10);
+    --shadow:0 2px 4px rgba(20,19,56,.05), 0 22px 48px -22px rgba(20,19,56,.22);
+    --shadow-xl:0 40px 90px -34px rgba(16,15,48,.5);
+    --r:16px; --r-lg:24px;
     --font:'Readex Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --maxw:1140px;
+    --maxw:1180px;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ink:#F2F3FE; --indigo:#93A3FB; --indigo-2:#AEB6FF; --peri:#93A3FB; --mist:#211F52;
-      --bg:#0C0B22; --surface:#141235; --surface-2:#1B1945;
-      --fg:#F2F3FE; --fg-muted:#B7B8E4; --fg-faint:#8887B8;
-      --border:#282656; --border-strong:#343173;
-      --hero-1:#1B1A47; --hero-2:#0D0C28; --on-hero:#EDEEFF; --on-hero-muted:#AEB0E6;
-      --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.55);
-      --shadow-lg:0 30px 70px -28px rgba(0,0,0,.7);
+      --ink:#F3F4FE; --indigo:#96A5FF; --indigo-2:#B0BBFF; --peri:#96A5FF; --peri-2:#C4CCFF; --mist:#211F55;
+      --bg:#0A0920; --surface:#141235; --surface-2:#1A1846; --surface-3:#211F55;
+      --fg:#F3F4FE; --fg-2:#C9CAEE; --fg-muted:#A6A7D6; --fg-faint:#7E7EB0;
+      --border:#2A2860; --border-2:#3A3878;
+      --d1:#1A184A; --d2:#0C0B28; --d3:#07061B;
+      --on-d:#EEF0FF; --on-d-2:#C4C7EE; --on-d-faint:#9C9FD4;
+      --ok:#4ADE80; --ok-bg:rgba(74,222,128,.14); --warn:#FBBF24;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.4), 0 10px 24px -12px rgba(0,0,0,.6);
+      --shadow:0 2px 6px rgba(0,0,0,.4), 0 26px 54px -24px rgba(0,0,0,.7);
+      --shadow-xl:0 44px 100px -34px rgba(0,0,0,.8);
     }
   }
   :root[data-theme="dark"]{
-    --ink:#F2F3FE; --indigo:#93A3FB; --indigo-2:#AEB6FF; --peri:#93A3FB; --mist:#211F52;
-    --bg:#0C0B22; --surface:#141235; --surface-2:#1B1945;
-    --fg:#F2F3FE; --fg-muted:#B7B8E4; --fg-faint:#8887B8;
-    --border:#282656; --border-strong:#343173;
-    --hero-1:#1B1A47; --hero-2:#0D0C28;
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.55);
-    --shadow-lg:0 30px 70px -28px rgba(0,0,0,.7);
+    --ink:#F3F4FE; --indigo:#96A5FF; --indigo-2:#B0BBFF; --peri:#96A5FF; --peri-2:#C4CCFF; --mist:#211F55;
+    --bg:#0A0920; --surface:#141235; --surface-2:#1A1846; --surface-3:#211F55;
+    --fg:#F3F4FE; --fg-2:#C9CAEE; --fg-muted:#A6A7D6; --fg-faint:#7E7EB0;
+    --border:#2A2860; --border-2:#3A3878; --d1:#1A184A; --d2:#0C0B28; --d3:#07061B;
+    --ok:#4ADE80; --ok-bg:rgba(74,222,128,.14); --warn:#FBBF24;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4), 0 10px 24px -12px rgba(0,0,0,.6);
+    --shadow:0 2px 6px rgba(0,0,0,.4), 0 26px 54px -24px rgba(0,0,0,.7);
+    --shadow-xl:0 44px 100px -34px rgba(0,0,0,.8);
   }
 
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family:var(--font); font-weight:400; font-size:16px; line-height:1.6;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  h1,h2,h3{margin:0; line-height:1.12; letter-spacing:-.02em; text-wrap:balance; font-weight:600}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--font); font-weight:400; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden}
+  h1,h2,h3,h4{margin:0; line-height:1.1; letter-spacing:-.025em; text-wrap:balance; font-weight:600; color:var(--fg)}
   p{margin:0}
   a{color:inherit; text-decoration:none}
-  ::selection{background:var(--peri); color:var(--ink)}
-  :focus-visible{outline:2.5px solid var(--indigo); outline-offset:3px; border-radius:6px}
+  ::selection{background:var(--peri); color:#0A0922}
+  :focus-visible{outline:2.5px solid var(--indigo); outline-offset:3px; border-radius:8px}
+  svg{display:block}
 
   .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:24px}
-  .eyebrow{font-size:.74rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--indigo)}
-  html[dir="rtl"] .eyebrow{letter-spacing:.02em}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:.75rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--indigo)}
+  html[dir="rtl"] .eyebrow{letter-spacing:.03em}
+  .eyebrow::before{content:""; width:22px; height:2px; border-radius:2px; background:var(--peri)}
+  /* the "answer line, lit up" — Dalil's motif as a highlighter */
+  .lit{background:linear-gradient(transparent 58%, color-mix(in srgb, var(--peri) 75%, transparent) 0); padding:0 .05em; border-radius:2px}
+  .hero .lit{color:#fff}
 
-  /* ---- buttons ---- */
-  .btn{display:inline-flex; align-items:center; gap:.55em; font-family:var(--font); font-weight:600; font-size:.98rem;
-    padding:.82em 1.5em; border-radius:999px; border:1px solid transparent; cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease}
-  .btn-primary{background:var(--indigo); color:#fff; box-shadow:0 10px 24px -10px rgba(52,51,196,.7)}
-  .btn-primary:hover{transform:translateY(-1px); background:var(--indigo-2)}
-  .btn-ghost{background:transparent; color:var(--on-hero); border-color:rgba(255,255,255,.24)}
-  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+  .btn{display:inline-flex; align-items:center; gap:.55em; font-family:var(--font); font-weight:600; font-size:.98rem; padding:.85em 1.55em; border-radius:999px; border:1px solid transparent; cursor:pointer; transition:transform .16s ease, box-shadow .22s ease, background .2s ease, border-color .2s}
   .btn svg{width:1.05em; height:1.05em}
   html[dir="rtl"] .btn .arr{transform:scaleX(-1)}
+  .btn-primary{background:var(--indigo); color:#fff; box-shadow:0 12px 26px -12px color-mix(in srgb, var(--indigo) 85%, transparent)}
+  .btn-primary:hover{transform:translateY(-2px); background:var(--indigo-2)}
+  .btn-line{background:transparent; color:var(--fg); border-color:var(--border-2)}
+  .btn-line:hover{background:var(--surface-2); border-color:var(--fg-faint)}
+  .btn-ondark{background:rgba(255,255,255,.09); color:#fff; border-color:rgba(255,255,255,.22)}
+  .btn-ondark:hover{background:rgba(255,255,255,.16)}
 
-  /* ---- header ---- */
-  header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
-    background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:saturate(160%) blur(12px);
-    border-bottom:1px solid var(--border)}
-  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:68px}
-  .brand{display:inline-flex; align-items:center; gap:11px; font-weight:600; font-size:1.16rem; color:var(--fg); letter-spacing:-.02em}
-  .brand .mark{width:34px; height:34px; flex:none}
-  .brand b{font-weight:700}
-  .brand .onn{color:var(--indigo)}
-  .nav-links{display:flex; align-items:center; gap:8px}
-  .nav-links a.link{padding:.5em .85em; border-radius:10px; color:var(--fg-muted); font-weight:500; font-size:.95rem}
-  .nav-links a.link:hover{color:var(--fg); background:var(--surface-2)}
-  .lang{display:inline-flex; align-items:center; gap:0; border:1px solid var(--border-strong); border-radius:999px; overflow:hidden; margin-inline-start:4px}
-  .lang button{font-family:var(--font); font-weight:600; font-size:.82rem; padding:.38em .8em; border:0; background:transparent; color:var(--fg-muted); cursor:pointer; line-height:1}
+  /* ---------- header ---------- */
+  .topbar{background:var(--ink); color:var(--on-d); font-size:.78rem; text-align:center; padding:7px 16px; letter-spacing:.01em}
+  .topbar b{color:var(--peri-2); font-weight:600}
+  header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:60; background:color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter:saturate(180%) blur(14px); border-bottom:1px solid var(--border)}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:70px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-weight:600; font-size:1.2rem; letter-spacing:-.02em}
+  .brand .mark{width:36px; height:36px; flex:none}
+  .brand b{font-weight:700} .brand .onn{color:var(--indigo)}
+  .nav-mid{display:none; align-items:center; gap:4px}
+  @media(min-width:860px){ .nav-mid{display:flex} }
+  .nav-mid a{padding:.55em .9em; border-radius:10px; color:var(--fg-muted); font-weight:500; font-size:.96rem; transition:color .2s, background .2s}
+  .nav-mid a:hover{color:var(--fg); background:var(--surface-2)}
+  .nav-end{display:flex; align-items:center; gap:10px}
+  .lang{display:inline-flex; border:1px solid var(--border-2); border-radius:999px; overflow:hidden}
+  .lang button{font-family:var(--font); font-weight:600; font-size:.82rem; padding:.42em .82em; border:0; background:transparent; color:var(--fg-muted); cursor:pointer; line-height:1; transition:background .2s,color .2s}
   .lang button[aria-pressed="true"]{background:var(--indigo); color:#fff}
   .nav-cta{display:none}
-  @media(min-width:720px){ .nav-cta{display:inline-flex} }
+  @media(min-width:560px){ .nav-cta{display:inline-flex} }
 
-  /* ---- hero ---- */
-  .hero{position:relative; overflow:hidden; color:var(--on-hero);
-    background:radial-gradient(120% 130% at 85% 0%, var(--hero-1) 0%, var(--hero-2) 60%)}
-  .hero::before{content:""; position:absolute; inset:0; pointer-events:none;
-    background:
-      radial-gradient(38% 44% at 82% 18%, rgba(147,163,251,.28), transparent 70%),
-      radial-gradient(30% 30% at 12% 92%, rgba(52,51,196,.45), transparent 72%);}
-  .hero .grid-lines{position:absolute; inset:0; opacity:.5;
-    background-image:linear-gradient(rgba(147,163,251,.07) 1px, transparent 1px),linear-gradient(90deg, rgba(147,163,251,.07) 1px, transparent 1px);
-    background-size:46px 46px; -webkit-mask-image:radial-gradient(120% 90% at 70% 10%, #000 30%, transparent 78%); mask-image:radial-gradient(120% 90% at 70% 10%, #000 30%, transparent 78%)}
-  .hero-inner{position:relative; display:grid; grid-template-columns:1fr; gap:44px; align-items:center;
-    padding-block:64px 76px}
-  @media(min-width:900px){ .hero-inner{grid-template-columns:1.02fr .98fr; gap:52px; padding-block:88px 96px} }
-  .hero .eyebrow{color:var(--peri)}
-  .hero h1{font-size:clamp(2.15rem, 5.2vw, 3.5rem); font-weight:600; color:#fff; margin-top:16px}
-  .hero h1 .hl{color:var(--peri)}
-  .hero .sub{margin-top:20px; font-size:clamp(1.02rem,1.6vw,1.2rem); color:var(--on-hero-muted); max-width:34em; font-weight:300}
-  .hero .cta-row{margin-top:32px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
-  .hero .cta-note{font-size:.86rem; color:var(--on-hero-muted)}
+  /* ---------- hero ---------- */
+  .hero{position:relative; overflow:hidden; color:var(--on-d); background:radial-gradient(140% 120% at 78% -10%, var(--d1) 0%, var(--d2) 55%, var(--d3) 100%)}
+  .hero .glow{position:absolute; inset:0; pointer-events:none; background:radial-gradient(40% 46% at 84% 12%, rgba(147,163,251,.30), transparent 68%), radial-gradient(34% 40% at 6% 96%, rgba(52,51,196,.5), transparent 70%)}
+  .hero .grid{position:absolute; inset:0; opacity:.6; background-image:linear-gradient(rgba(147,163,251,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(147,163,251,.06) 1px, transparent 1px); background-size:48px 48px; -webkit-mask-image:radial-gradient(120% 92% at 72% 8%, #000 32%, transparent 78%); mask-image:radial-gradient(120% 92% at 72% 8%, #000 32%, transparent 78%)}
+  .hero-inner{position:relative; display:grid; grid-template-columns:1fr; gap:48px; align-items:center; padding-block:60px 72px}
+  @media(min-width:940px){ .hero-inner{grid-template-columns:1.05fr .95fr; gap:48px; padding-block:92px 104px} }
+  .hero .eyebrow{color:var(--peri-2)} .hero .eyebrow::before{background:var(--peri-2)}
+  .hero h1{font-size:clamp(2.35rem, 5.6vw, 3.85rem); font-weight:600; color:#fff; margin-top:18px; letter-spacing:-.03em}
+  .hero .sub{margin-top:22px; font-size:clamp(1.05rem,1.55vw,1.24rem); color:var(--on-d-2); max-width:33em; font-weight:300}
+  .hero .cta-row{margin-top:34px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+  .hero .metrics{margin-top:40px; display:flex; flex-wrap:wrap; gap:28px}
+  .hero .metrics .m .n{font-size:1.5rem; font-weight:700; color:#fff; letter-spacing:-.02em}
+  .hero .metrics .m .l{font-size:.8rem; color:var(--on-d-faint); margin-top:2px}
+  .hero .metrics .sep{width:1px; background:rgba(147,163,251,.2)}
 
-  /* ---- hero visual: ops panel + dalil card ---- */
-  .visual{position:relative; min-height:340px}
-  .ops{position:relative; background:rgba(255,255,255,.055); border:1px solid rgba(147,163,251,.22); border-radius:20px; padding:20px; backdrop-filter:blur(6px);
-    box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-  .ops-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px}
-  .ops-head .t{font-size:.82rem; font-weight:600; color:#fff; letter-spacing:.02em}
-  .ops-head .dot{display:flex; gap:5px}
-  .ops-head .dot i{width:8px; height:8px; border-radius:50%; background:rgba(147,163,251,.4)}
+  /* hero visual */
+  .visual{position:relative; min-height:360px}
+  .ops{position:relative; background:rgba(255,255,255,.055); border:1px solid rgba(147,163,251,.22); border-radius:20px; padding:20px; backdrop-filter:blur(6px); box-shadow:0 34px 70px -32px rgba(0,0,0,.7)}
+  .ops-h{display:flex; align-items:center; justify-content:space-between; margin-bottom:15px}
+  .ops-h .t{font-size:.82rem; font-weight:600; color:#fff}
+  .ops-h .d{display:flex; gap:5px}
+  .ops-h .d i{width:8px; height:8px; border-radius:50%; background:rgba(147,163,251,.4)}
   .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
-  .tile{background:rgba(13,12,40,.4); border:1px solid rgba(147,163,251,.14); border-radius:12px; padding:11px 12px}
-  .tile .lb{font-size:.64rem; color:var(--peri); font-weight:500; letter-spacing:.03em}
+  .tile{background:rgba(10,9,34,.45); border:1px solid rgba(147,163,251,.14); border-radius:12px; padding:11px 12px}
+  .tile .lb{font-size:.64rem; color:var(--peri-2); font-weight:500}
   .tile .vl{font-size:1.02rem; font-weight:700; color:#fff; margin-top:3px; font-variant-numeric:tabular-nums}
-  .bars{display:flex; align-items:flex-end; gap:6px; height:56px; margin-top:14px; padding:0 2px}
+  .bars{display:flex; align-items:flex-end; gap:6px; height:54px; margin-top:14px}
   .bars i{flex:1; background:linear-gradient(var(--peri), rgba(147,163,251,.35)); border-radius:4px 4px 0 0; opacity:.9}
+  .dalil-card{position:relative; margin-top:-44px; margin-inline-start:auto; width:min(100%,346px); background:var(--surface); color:var(--fg); border:1px solid var(--border); border-radius:16px; padding:16px 17px; box-shadow:var(--shadow-xl)}
+  @media(min-width:940px){ .dalil-card{position:absolute; right:-16px; bottom:-34px; width:326px; margin-top:0} html[dir="rtl"] .dalil-card{right:auto; left:-16px} }
+  .dc-h{display:flex; align-items:center; gap:9px; margin-bottom:11px}
+  .dc-h .dm{width:26px; height:26px; flex:none}
+  .dc-h .nm{font-weight:600; font-size:.92rem} .dc-h .nm span{color:var(--fg-faint); font-weight:400; margin-inline-start:5px; font-size:.82rem}
+  .dc-h .live{margin-inline-start:auto; display:inline-flex; align-items:center; gap:5px; font-size:.64rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.3em .6em; border-radius:999px}
+  .dc-h .live i{width:6px; height:6px; border-radius:50%; background:var(--ok)}
+  .q{font-size:.86rem; color:var(--fg-muted); background:var(--surface-2); border-radius:10px 10px 10px 3px; padding:9px 11px; margin-bottom:10px}
+  .a{font-size:.9rem; line-height:1.5}
+  .cite{display:inline-flex; align-items:center; gap:6px; margin-top:11px; font-size:.72rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.42em .72em; border-radius:8px}
+  .cite svg{width:12px; height:14px}
 
-  .dalil-card{position:relative; margin-top:-46px; margin-inline-start:auto; width:min(100%,340px);
-    background:var(--surface); color:var(--fg); border:1px solid var(--border); border-radius:16px; padding:16px 17px; box-shadow:var(--shadow-lg)}
-  @media(min-width:900px){ .dalil-card{position:absolute; right:-14px; bottom:-30px; margin-top:0; width:320px} html[dir="rtl"] .dalil-card{right:auto; left:-14px} }
-  .dc-head{display:flex; align-items:center; gap:9px; margin-bottom:11px}
-  .dc-head .dm{width:26px; height:26px; flex:none}
-  .dc-head .nm{font-weight:600; font-size:.92rem; color:var(--fg)}
-  .dc-head .nm span{color:var(--fg-faint); font-weight:400; margin-inline-start:5px; font-size:.82rem}
-  .dc-head .live{margin-inline-start:auto; font-size:.64rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.28em .6em; border-radius:999px}
-  .q{font-size:.86rem; color:var(--fg-muted); background:var(--surface-2); border-radius:10px; padding:9px 11px; margin-bottom:10px}
-  .a{font-size:.9rem; color:var(--fg); line-height:1.5}
-  .a .lit{background:linear-gradient(transparent 62%, var(--peri) 0); padding:0 1px; color:var(--ink)}
-  .cite{display:inline-flex; align-items:center; gap:6px; margin-top:11px; font-size:.72rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.4em .7em; border-radius:8px}
-  .cite svg{width:12px; height:14px; flex:none}
+  /* ---------- logo/trust strip ---------- */
+  .strip{border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--surface-2)}
+  .strip-in{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 34px; padding-block:20px; color:var(--fg-muted); font-size:.92rem; font-weight:500}
+  .strip-in .it{display:inline-flex; align-items:center; gap:9px}
+  .strip-in .it svg{width:17px; height:17px; color:var(--indigo)}
+  .strip-in .dot{width:4px; height:4px; border-radius:50%; background:var(--border-2)}
 
-  /* ---- section base ---- */
-  section{padding-block:78px}
-  .sec-head{max-width:40rem}
-  .sec-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem); margin-top:12px}
-  .sec-head p{margin-top:14px; color:var(--fg-muted); font-size:1.05rem}
+  /* ---------- sections ---------- */
+  section{padding-block:88px}
+  @media(max-width:640px){ section{padding-block:64px} }
+  .sec-head{max-width:44rem}
+  .sec-head.center{margin-inline:auto; text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.9vw,2.7rem); margin-top:14px}
+  .sec-head p{margin-top:16px; color:var(--fg-muted); font-size:1.1rem; font-weight:300}
+  .sec-head.center .eyebrow::before{display:none} .sec-head.center .eyebrow{gap:0}
 
-  /* ---- products ---- */
-  .cards{display:grid; grid-template-columns:1fr; gap:22px; margin-top:44px}
-  @media(min-width:860px){ .cards{grid-template-columns:1fr 1fr} }
-  .card{position:relative; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
-  .card .badge{position:absolute; inset-block-start:0; inset-inline-end:0; width:150px; height:150px; background:radial-gradient(circle at 100% 0, var(--mist), transparent 70%); pointer-events:none}
-  .card .kh{display:flex; align-items:center; gap:13px; margin-bottom:18px}
-  .card .kh .m{width:44px; height:44px; flex:none; display:grid; place-items:center; border-radius:12px}
-  .card .kh h3{font-size:1.4rem; font-weight:600}
-  .card .kh h3 .ar{font-weight:500; color:var(--fg-faint); margin-inline-start:8px; font-size:1.1rem}
-  .card .kh .onn{color:var(--indigo)}
-  .card .desc{color:var(--fg-muted); font-size:1.02rem; flex:1}
-  .card .desc b{color:var(--fg); font-weight:600}
-  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
-  .chip{font-size:.8rem; font-weight:500; color:var(--fg); background:var(--surface-2); border:1px solid var(--border); padding:.42em .8em; border-radius:999px; display:inline-flex; align-items:center; gap:6px}
-  .chip svg{width:13px; height:13px; color:var(--indigo)}
-  .erp-list{list-style:none; padding:0; margin:22px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:9px 14px}
-  .erp-list li{display:flex; align-items:center; gap:9px; font-size:.94rem; color:var(--fg)}
-  .erp-list li svg{width:16px; height:16px; color:var(--indigo); flex:none}
+  /* platform / ERP module grid */
+  .platform{background:var(--surface-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+  .mods{display:grid; grid-template-columns:1fr; gap:16px; margin-top:48px}
+  @media(min-width:600px){ .mods{grid-template-columns:1fr 1fr} }
+  @media(min-width:960px){ .mods{grid-template-columns:repeat(4,1fr)} }
+  .mod{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:22px; transition:transform .18s ease, box-shadow .22s ease, border-color .2s; position:relative}
+  .mod:hover{transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--border-2)}
+  .mod .ic{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--mist); color:var(--indigo); margin-bottom:15px}
+  .mod .ic svg{width:23px; height:23px}
+  .mod h3{font-size:1.08rem}
+  .mod p{margin-top:7px; color:var(--fg-muted); font-size:.92rem; line-height:1.5}
+  .platform-foot{margin-top:34px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px; color:var(--fg-muted); font-size:.98rem}
+  .platform-foot .pill{display:inline-flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:.5em 1em; font-weight:500; color:var(--fg)}
+  .platform-foot .pill svg{width:15px; height:15px; color:var(--indigo)}
 
-  /* ---- contact ---- */
-  .contact-band{background:linear-gradient(135deg, var(--hero-1), var(--hero-2)); color:var(--on-hero); border-radius:26px; padding:52px 40px; position:relative; overflow:hidden}
-  .contact-band::after{content:""; position:absolute; inset:0; background:radial-gradient(40% 60% at 90% 10%, rgba(147,163,251,.22), transparent 70%); pointer-events:none}
-  .contact-grid{position:relative; display:grid; grid-template-columns:1fr; gap:28px; align-items:center}
-  @media(min-width:800px){ .contact-grid{grid-template-columns:1.3fr .7fr} }
-  .contact-grid h2{color:#fff; font-size:clamp(1.7rem,3.6vw,2.3rem)}
-  .contact-grid p{color:var(--on-hero-muted); margin-top:14px; font-size:1.05rem; max-width:30em; font-weight:300}
-  .contact-info{display:flex; flex-direction:column; gap:14px}
-  .contact-info a, .contact-info .row{display:inline-flex; align-items:center; gap:11px; color:#fff; font-weight:500; font-size:1.05rem}
-  .contact-info svg{width:20px; height:20px; color:var(--peri); flex:none}
-  .contact-band .btn-primary{margin-top:24px}
+  /* Dalil section */
+  .dalil{position:relative; overflow:hidden; color:var(--on-d); background:radial-gradient(120% 120% at 12% 0%, var(--d1), var(--d2) 62%, var(--d3))}
+  .dalil .glow{position:absolute; inset:0; pointer-events:none; background:radial-gradient(36% 40% at 88% 84%, rgba(147,163,251,.24), transparent 70%)}
+  .dalil-grid{position:relative; display:grid; grid-template-columns:1fr; gap:44px; align-items:center}
+  @media(min-width:940px){ .dalil-grid{grid-template-columns:1fr 1fr; gap:56px} }
+  .dalil h2{color:#fff; font-size:clamp(1.85rem,3.9vw,2.7rem)}
+  .dalil .eyebrow{color:var(--peri-2)} .dalil .eyebrow::before{background:var(--peri-2)}
+  .dalil .lead{margin-top:16px; color:var(--on-d-2); font-size:1.1rem; font-weight:300; max-width:32em}
+  .feats{margin-top:28px; display:grid; gap:16px}
+  .feat{display:flex; gap:14px; align-items:flex-start}
+  .feat .fi{width:38px; height:38px; flex:none; border-radius:11px; background:rgba(147,163,251,.14); border:1px solid rgba(147,163,251,.24); display:grid; place-items:center; color:var(--peri-2)}
+  .feat .fi svg{width:19px; height:19px}
+  .feat h4{color:#fff; font-size:1rem; font-weight:600}
+  .feat p{color:var(--on-d-2); font-size:.92rem; margin-top:3px; font-weight:300}
+  /* Dalil demo panel */
+  .demo{background:rgba(255,255,255,.05); border:1px solid rgba(147,163,251,.2); border-radius:22px; padding:22px; backdrop-filter:blur(6px)}
+  .demo .row{display:flex; gap:10px; align-items:flex-start; margin-bottom:14px}
+  .demo .av{width:30px; height:30px; flex:none; border-radius:9px; display:grid; place-items:center; font-size:.7rem; font-weight:700}
+  .demo .av.u{background:rgba(147,163,251,.2); color:var(--peri-2)}
+  .demo .bub{border-radius:12px; padding:11px 13px; font-size:.9rem; max-width:100%}
+  .demo .bub.u{background:rgba(255,255,255,.08); color:var(--on-d); border-radius:12px 12px 12px 4px}
+  .demo .bub.d{background:#fff; color:var(--ink); box-shadow:0 14px 30px -16px rgba(0,0,0,.6); border-radius:12px 12px 4px 12px}
+  .demo .bub.d .src{display:inline-flex; align-items:center; gap:6px; margin-top:9px; font-size:.7rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.36em .66em; border-radius:7px}
+  .demo .bub.d .src svg{width:11px; height:13px}
+  .demo .ch{display:flex; align-items:center; gap:8px; margin-top:6px; padding-top:14px; border-top:1px solid rgba(147,163,251,.16); color:var(--on-d-faint); font-size:.78rem}
+  .demo .ch .wa{margin-inline-start:auto; display:inline-flex; align-items:center; gap:6px; color:var(--peri-2); font-weight:600}
+  .demo .ch .wa svg{width:15px; height:15px}
 
-  /* ---- footer ---- */
-  footer.site{border-top:1px solid var(--border); padding-block:34px; margin-top:12px}
-  .foot{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px}
-  .foot .fbrand{display:inline-flex; align-items:center; gap:9px; font-weight:600; color:var(--fg)}
-  .foot .fbrand .mark{width:26px; height:26px}
-  .foot .fmeta{display:flex; flex-wrap:wrap; align-items:center; gap:8px 18px; color:var(--fg-muted); font-size:.9rem}
-  .foot .fmeta a:hover{color:var(--indigo)}
-  .foot .sep{color:var(--border-strong)}
+  /* why grid */
+  .why-grid{display:grid; grid-template-columns:1fr; gap:18px; margin-top:48px}
+  @media(min-width:640px){ .why-grid{grid-template-columns:1fr 1fr} }
+  @media(min-width:980px){ .why-grid{grid-template-columns:repeat(4,1fr)} }
+  .why{padding:26px 22px; border-radius:var(--r); background:var(--surface); border:1px solid var(--border)}
+  .why .wi{width:40px; height:40px; border-radius:11px; display:grid; place-items:center; background:var(--mist); color:var(--indigo); margin-bottom:14px}
+  .why .wi svg{width:21px; height:21px}
+  .why h3{font-size:1.05rem}
+  .why p{margin-top:8px; color:var(--fg-muted); font-size:.92rem; line-height:1.5}
 
-  @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+  /* CTA */
+  .cta-band{position:relative; overflow:hidden; border-radius:var(--r-lg); background:linear-gradient(135deg, var(--d1), var(--d2)); color:var(--on-d); padding:60px 44px; box-shadow:var(--shadow)}
+  .cta-band::after{content:""; position:absolute; inset:0; background:radial-gradient(40% 70% at 88% 10%, rgba(147,163,251,.24), transparent 70%); pointer-events:none}
+  .cta-grid{position:relative; display:grid; grid-template-columns:1fr; gap:30px; align-items:center}
+  @media(min-width:820px){ .cta-grid{grid-template-columns:1.35fr .65fr} }
+  .cta-grid h2{color:#fff; font-size:clamp(1.8rem,3.7vw,2.5rem)}
+  .cta-grid p{color:var(--on-d-2); margin-top:14px; font-size:1.08rem; font-weight:300; max-width:30em}
+  .cta-info{display:flex; flex-direction:column; gap:14px}
+  .cta-info a,.cta-info .r{display:inline-flex; align-items:center; gap:11px; color:#fff; font-weight:500; font-size:1.05rem}
+  .cta-info svg{width:20px; height:20px; color:var(--peri-2); flex:none}
+
+  /* footer */
+  footer.site{background:var(--surface-2); border-top:1px solid var(--border); padding-block:52px 30px; margin-top:8px}
+  .foot-grid{display:grid; grid-template-columns:1fr; gap:34px}
+  @media(min-width:720px){ .foot-grid{grid-template-columns:1.6fr 1fr 1fr} }
+  .foot-brand .fb{display:inline-flex; align-items:center; gap:11px; font-weight:600; font-size:1.2rem}
+  .foot-brand .fb .mark{width:34px; height:34px}
+  .foot-brand b{font-weight:700} .foot-brand .onn{color:var(--indigo)}
+  .foot-brand p{margin-top:14px; color:var(--fg-muted); font-size:.95rem; max-width:26em; font-weight:300}
+  .foot-col h4{font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--fg-faint); font-weight:600; margin-bottom:14px}
+  .foot-col a,.foot-col .r{display:flex; align-items:center; gap:9px; color:var(--fg-muted); font-size:.95rem; padding:5px 0; transition:color .2s}
+  .foot-col a:hover{color:var(--indigo)}
+  .foot-col svg{width:15px; height:15px; flex:none; color:var(--fg-faint)}
+  .foot-bar{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:40px; padding-top:22px; border-top:1px solid var(--border); color:var(--fg-faint); font-size:.88rem}
+  .foot-bar a:hover{color:var(--indigo)}
+
+  /* motion: gentle entrance from a visible resting state */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:.001; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1; transform:none}
+  }
 </style>
 </head>
 <body>
+
+<!-- announcement -->
+<div class="topbar"><span data-i18n="top">Built in Qatar · Arabic &amp; English · In the browser and on WhatsApp</span></div>
 
 <!-- ===================== HEADER ===================== -->
 <header class="site">
@@ -199,42 +255,48 @@
       <svg class="mark" viewBox="0 0 500 500" aria-hidden="true"><rect width="500" height="500" rx="118" fill="#1d194c"/><path d="M250 96 348 264h-36c-16 0-27-7-35-20l-27-44-27 44c-8 13-19 20-35 20h-36z" fill="#9fabfe"/><path d="M250 278l38 52c8 10 18 15 30 15h42c12 0 23 6 29 16l23 37h-82c-12 0-22-6-28-16l-16-27c-3-5-7-7-12-7h-48c-5 0-9 2-12 7l-16 27c-6 10-16 16-28 16H88l23-37c6-10 17-16 29-16h42c12 0 22-5 30-15z" fill="#9fabfe"/></svg>
       <span><b>Apix</b><span class="onn">ONN</span></span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="#products" data-i18n="nav.products">Products</a>
-      <a class="link" href="#contact" data-i18n="nav.contact">Contact</a>
+    <nav class="nav-mid" aria-label="Primary">
+      <a href="#platform" data-i18n="nav.platform">Platform</a>
+      <a href="#dalil" data-i18n="nav.dalil">Dalil</a>
+      <a href="#why" data-i18n="nav.why">Why ApixONN</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-end">
       <a class="btn btn-primary nav-cta" href="mailto:info@apixonn.com" data-i18n="nav.cta">Contact us</a>
       <span class="lang" role="group" aria-label="Language">
         <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-set-lang="ar" aria-pressed="false" lang="ar">ع</button>
       </span>
-    </nav>
+    </div>
   </div>
 </header>
 
 <main id="top">
 <!-- ===================== HERO ===================== -->
 <section class="hero">
-  <div class="grid-lines" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="grid" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <div class="eyebrow" data-i18n="hero.eyebrow">Business software · Qatar</div>
-      <h1><span data-i18n="hero.h1a">Software that runs your business</span> <span class="hl" data-i18n="hero.h1b">and answers your questions.</span></h1>
-      <p class="sub" data-i18n="hero.sub">An ERP system for your operations, and Dalil, an AI assistant that answers from your company's own documents.</p>
+    <div>
+      <span class="eyebrow" data-i18n="hero.eyebrow">The business platform · Qatar</span>
+      <h1><span data-i18n="hero.h1a">Run your business —</span> <span class="lit" data-i18n="hero.h1b">and get answers from it.</span></h1>
+      <p class="sub" data-i18n="hero.sub">ApixONN is one ERP for finance, HR, payroll, projects, inventory and property — and Dalil, an AI assistant that answers from your company's own documents, citing the exact page. Arabic and English.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:info@apixonn.com">
-          <span data-i18n="hero.cta">Contact us</span>
-          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <span class="cta-note" data-i18n="hero.note">Arabic &amp; English · Made in Qatar</span>
+        <a class="btn btn-primary" href="mailto:info@apixonn.com"><span data-i18n="hero.cta1">Contact us</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ondark" href="#platform" data-i18n="hero.cta2">Explore the platform</a>
+      </div>
+      <div class="metrics">
+        <div class="m"><div class="n" data-i18n="hero.m1n">8 modules</div><div class="l" data-i18n="hero.m1l">One connected system</div></div>
+        <div class="sep" aria-hidden="true"></div>
+        <div class="m"><div class="n" data-i18n="hero.m2n">AR + EN</div><div class="l" data-i18n="hero.m2l">Bilingual, RTL-ready</div></div>
+        <div class="sep" aria-hidden="true"></div>
+        <div class="m"><div class="n" data-i18n="hero.m3n">Cited</div><div class="l" data-i18n="hero.m3l">Every answer, to the page</div></div>
       </div>
     </div>
 
     <div class="visual" aria-hidden="true">
       <div class="ops">
-        <div class="ops-head">
-          <span class="t" data-i18n="ops.title">Operations · this month</span>
-          <span class="dot"><i></i><i></i><i></i></span>
-        </div>
+        <div class="ops-h"><span class="t" data-i18n="ops.title">Operations · this month</span><span class="d"><i></i><i></i><i></i></span></div>
         <div class="tiles">
           <div class="tile"><div class="lb" data-i18n="ops.t1">Revenue</div><div class="vl">QAR 1.24M</div></div>
           <div class="tile"><div class="lb" data-i18n="ops.t2">Projects</div><div class="vl">38</div></div>
@@ -242,93 +304,115 @@
         </div>
         <div class="bars"><i style="height:52%"></i><i style="height:70%"></i><i style="height:44%"></i><i style="height:82%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:72%"></i><i style="height:84%"></i></div>
       </div>
-
       <div class="dalil-card">
-        <div class="dc-head">
-          <svg class="dm" viewBox="12 4 40 56.5" aria-hidden="true"><path d="M19 6H40L50 16V37C50 40.6 48.7 43.3 46.4 45.6L34.8 57.2C33.3 58.7 30.7 58.7 29.2 57.2L17.6 45.6C15.3 43.3 14 40.6 14 37V11C14 8.2 16.2 6 19 6Z" fill="#3433C4"/><path d="M40 6L50 16H43.5C41.6 16 40 14.4 40 12.5Z" fill="#93A3FB"/><rect x="21" y="18" width="13" height="3.5" rx="1.75" fill="#fff"/><rect x="21" y="25" width="22" height="6" rx="3" fill="#93A3FB"/><rect x="21" y="35" width="17" height="3.5" rx="1.75" fill="#fff"/></svg>
+        <div class="dc-h">
+          <svg class="dm" viewBox="12 4 40 56.5"><path d="M19 6H40L50 16V37C50 40.6 48.7 43.3 46.4 45.6L34.8 57.2C33.3 58.7 30.7 58.7 29.2 57.2L17.6 45.6C15.3 43.3 14 40.6 14 37V11C14 8.2 16.2 6 19 6Z" fill="#3433C4"/><path d="M40 6L50 16H43.5C41.6 16 40 14.4 40 12.5Z" fill="#93A3FB"/><rect x="21" y="18" width="13" height="3.5" rx="1.75" fill="#fff"/><rect x="21" y="25" width="22" height="6" rx="3" fill="#93A3FB"/><rect x="21" y="35" width="17" height="3.5" rx="1.75" fill="#fff"/></svg>
           <span class="nm">Dalil<span>دليل</span></span>
-          <span class="live" data-i18n="dalil.live">Live</span>
+          <span class="live"><i></i><span data-i18n="dalil.live">Live</span></span>
         </div>
         <div class="q" data-i18n="dalil.q">What's the leave policy for new hires?</div>
-        <div class="a"><span data-i18n="dalil.a1">New employees accrue </span><span class="lit" data-i18n="dalil.a2">2.5 days of annual leave per month</span><span data-i18n="dalil.a3"> after a 3-month probation.</span></div>
-        <div class="cite">
-          <svg viewBox="0 0 12 14" fill="currentColor" aria-hidden="true"><path d="M2 0h6l4 4v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2Zm6 1v3h3"/></svg>
-          <span data-i18n="dalil.cite">Employee Handbook · p.12</span>
-        </div>
+        <div class="a"><span data-i18n="dalil.a1">New employees accrue </span><span class="lit" data-i18n="dalil.a2">2.5 days per month</span><span data-i18n="dalil.a3"> after a 3-month probation.</span></div>
+        <div class="cite"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M2 0h6l4 4v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2Zm6 1v3h3"/></svg><span data-i18n="dalil.cite">Employee Handbook · p.12</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== PRODUCTS ===================== -->
-<section id="products">
+<!-- ===================== TRUST STRIP ===================== -->
+<div class="strip">
+  <div class="wrap strip-in">
+    <span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18"/></svg><span data-i18n="strip.1">One source of truth</span></span>
+    <span class="dot" aria-hidden="true"></span>
+    <span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span data-i18n="strip.2">Arabic &amp; English</span></span>
+    <span class="dot" aria-hidden="true"></span>
+    <span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="strip.3">Made in Qatar</span></span>
+    <span class="dot" aria-hidden="true"></span>
+    <span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg><span data-i18n="strip.4">Your data stays yours</span></span>
+  </div>
+</div>
+
+<!-- ===================== PLATFORM / ERP ===================== -->
+<section id="platform" class="platform">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow" data-i18n="prod.eyebrow">Products</div>
-      <h2 data-i18n="prod.h2">One platform, two jobs</h2>
-      <p data-i18n="prod.sub">A system that does the work, and an assistant that knows the answers — both in Arabic and English.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="plat.eyebrow">The ApixONN ERP</span>
+      <h2 data-i18n="plat.h2">One system for the whole business</h2>
+      <p data-i18n="plat.sub">Finance, people, projects and assets in one connected platform — with approvals, reporting and an employee portal built in. No more a dozen disconnected spreadsheets.</p>
     </div>
 
-    <div class="cards">
-      <!-- ERP -->
-      <article class="card">
-        <span class="badge"></span>
-        <div class="kh">
-          <span class="m" style="background:transparent; width:44px; height:44px"><svg viewBox="0 0 500 500" width="44" aria-hidden="true"><rect width="500" height="500" rx="118" fill="#1d194c"/><path d="M250 96 348 264h-36c-16 0-27-7-35-20l-27-44-27 44c-8 13-19 20-35 20h-36z" fill="#9fabfe"/><path d="M250 278l38 52c8 10 18 15 30 15h42c12 0 23 6 29 16l23 37h-82c-12 0-22-6-28-16l-16-27c-3-5-7-7-12-7h-48c-5 0-9 2-12 7l-16 27c-6 10-16 16-28 16H88l23-37c6-10 17-16 29-16h42c12 0 22-5 30-15z" fill="#9fabfe"/></svg></span>
-          <h3><b>Apix</b><span class="onn">ONN</span> ERP</h3>
-        </div>
-        <p class="desc" data-i18n="erp.desc">One system for the whole business. Approvals, reporting, and an employee portal are built in, so your operations run in one place instead of a dozen spreadsheets.</p>
-        <ul class="erp-list">
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f1">Finance &amp; accounting</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f2">HR &amp; payroll</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f3">Projects</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f4">Inventory</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f5">Property</span></li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f6">Sales &amp; clients</span></li>
-        </ul>
-      </article>
+    <div class="mods">
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5h.01M18 14.5h.01"/></svg></div><h3 data-i18n="m.fin.t">Finance &amp; Accounting</h3><p data-i18n="m.fin.p">Invoices, receipts, journals, chart of accounts, bills, POs, bank reconciliation, budgets and tax — real double-entry GL.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M16.5 5.5a3 3 0 0 1 0 5.5M15.5 14.2A6 6 0 0 1 21 20"/></svg></div><h3 data-i18n="m.hr.t">HR &amp; Payroll</h3><p data-i18n="m.hr.p">Employees, contracts, grades, leaves, attendance and org chart — plus a full payroll engine: cycles, payslips, loans, tax, bank files.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="5.5" height="16" rx="1.4"/><rect x="10.25" y="4" width="5.5" height="10" rx="1.4"/><rect x="17.5" y="4" width="3.5" height="13" rx="1.4"/></svg></div><h3 data-i18n="m.proj.t">Projects &amp; Resources</h3><p data-i18n="m.proj.p">Phases and milestones, risks, budgets, earned-value analytics, allocations, timesheets and capacity planning.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-4 9 4-9 4-9-4Z"/><path d="M3 8v8l9 4 9-4V8M12 12v8"/></svg></div><h3 data-i18n="m.inv.t">Inventory</h3><p data-i18n="m.inv.p">Products and suppliers, goods received (GRN), goods issued and live stock — every movement posted to the ledger.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l7-3v18M4 21h16M14 21V9l6 3v9M8 9h.01M8 13h.01M8 17h.01"/></svg></div><h3 data-i18n="m.prop.t">Property</h3><p data-i18n="m.prop.p">Portfolios and units, leases, deposits and cheques, maintenance, and owner statements &amp; settlements.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a1 1 0 0 1-1 1h-5v-5h-4v5H5a1 1 0 0 1-1-1v-7"/><path d="M2.5 11 12 3l9.5 8"/></svg></div><h3 data-i18n="m.sales.t">Clients &amp; Sales</h3><p data-i18n="m.sales.p">Clients, an opportunity pipeline and statements of work — the commercial hub every project and invoice hangs off.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/><path d="M6.5 10v3a2 2 0 0 0 2 2H14M8 6.5l-1.5 1.5M8 6.5l1.5 1.5"/></svg></div><h3 data-i18n="m.wf.t">Workflow &amp; Approvals</h3><p data-i18n="m.wf.p">Multi-step approvals with separation of duties across the whole system — nothing big moves on one person's say-so.</p></div>
+      <div class="mod reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16M8 16l3.5-4 3 2.5L20 8"/></svg></div><h3 data-i18n="m.rep.t">Reports &amp; Analytics</h3><p data-i18n="m.rep.p">Financial statements, HR, payroll, projects and resource analytics — the numbers, always reconciled to the ledger.</p></div>
+    </div>
 
-      <!-- DALIL -->
-      <article class="card">
-        <span class="badge"></span>
-        <div class="kh">
-          <span class="m" style="background:transparent; width:44px; height:44px"><svg viewBox="12 4 40 56.5" width="30" aria-hidden="true"><path d="M19 6H40L50 16V37C50 40.6 48.7 43.3 46.4 45.6L34.8 57.2C33.3 58.7 30.7 58.7 29.2 57.2L17.6 45.6C15.3 43.3 14 40.6 14 37V11C14 8.2 16.2 6 19 6Z" fill="#3433C4"/><path d="M40 6L50 16H43.5C41.6 16 40 14.4 40 12.5Z" fill="#93A3FB"/><rect x="21" y="18" width="13" height="3.5" rx="1.75" fill="#fff"/><rect x="21" y="25" width="22" height="6" rx="3" fill="#93A3FB"/><rect x="21" y="35" width="17" height="3.5" rx="1.75" fill="#fff"/></svg></span>
-          <h3>Dalil <span class="ar" lang="ar">دليل</span></h3>
-        </div>
-        <p class="desc" data-i18n="dalil.desc">Ask a question and get the answer from your own manuals, contracts, schedules, and emails — with <b>the exact page cited</b>. Everyone only sees the files they're allowed to.</p>
-        <div class="chips">
-          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg><span data-i18n="dalil.c1">Arabic &amp; English</span></span>
-          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h7l4 4v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/></svg><span data-i18n="dalil.c2">Cites the page</span></span>
-          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2l6 3v5c0 4-3 6.5-6 8-3-1.5-6-4-6-8V5z"/></svg><span data-i18n="dalil.c3">Permission-aware</span></span>
-          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5A7.5 7.5 0 0 0 3.6 14L2.5 17.5 6 16.4A7.5 7.5 0 1 0 10 2.5Z"/></svg><span data-i18n="dalil.c4">Browser + WhatsApp</span></span>
-        </div>
-      </article>
+    <div class="platform-foot reveal">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5c0 5-2 6-2 6h14s-2-1-2-6a5 5 0 0 0-5-5Z"/><path d="M10.5 20a1.7 1.7 0 0 0 3 0"/></svg><span data-i18n="plat.ewp">Employee Web Portal</span></span>
+      <span data-i18n="plat.ewpnote">Every employee gets self-service: timesheets, leave and HR requests, tasks, documents and their profile.</span>
     </div>
   </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
+<!-- ===================== DALIL ===================== -->
+<section id="dalil" class="dalil">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap dalil-grid">
+    <div class="reveal">
+      <span class="eyebrow">Dalil · دليل</span>
+      <h2 data-i18n="dl.h2">The assistant that reads your documents</h2>
+      <p class="lead" data-i18n="dl.lead">Ask a question in plain language and Dalil answers from your own manuals, contracts, schedules and emails — and shows you the exact page it came from. No hunting through folders.</p>
+      <div class="feats">
+        <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4M8.5 13h7M8.5 16.5h4"/></svg></span><div><h4 data-i18n="dl.f1t">Cites the exact page</h4><p data-i18n="dl.f1p">Every answer links back to the source document and page, so you can trust it and check it.</p></div></div>
+        <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h9"/></svg></span><div><h4 data-i18n="dl.f2t">Arabic &amp; English</h4><p data-i18n="dl.f2p">Ask in either language and get a clear answer in the same one — built bilingual from day one.</p></div></div>
+        <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></span><div><h4 data-i18n="dl.f3t">Permission-aware</h4><p data-i18n="dl.f3p">Everyone only sees answers from the files they're allowed to — access rules are respected on every question.</p></div></div>
+        <div class="feat"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5A7.5 7.5 0 0 0 3.6 14L2.5 17.5 6 16.4A7.5 7.5 0 1 0 10 2.5Z"/></svg></span><div><h4 data-i18n="dl.f4t">Browser + WhatsApp</h4><p data-i18n="dl.f4p">Use Dalil on the web, or just message it on WhatsApp — the answer, wherever your team already works.</p></div></div>
+      </div>
+    </div>
+
+    <div class="demo reveal">
+      <div class="row"><span class="av u">HA</span><div class="bub u" data-i18n="dl.q">Can I carry over unused annual leave to next year?</div></div>
+      <div class="row"><svg class="av" style="width:30px;height:30px" viewBox="12 4 40 56.5"><path d="M19 6H40L50 16V37C50 40.6 48.7 43.3 46.4 45.6L34.8 57.2C33.3 58.7 30.7 58.7 29.2 57.2L17.6 45.6C15.3 43.3 14 40.6 14 37V11C14 8.2 16.2 6 19 6Z" fill="#3433C4"/><path d="M40 6L50 16H43.5C41.6 16 40 14.4 40 12.5Z" fill="#93A3FB"/><rect x="21" y="18" width="13" height="3.5" rx="1.75" fill="#fff"/><rect x="21" y="25" width="22" height="6" rx="3" fill="#93A3FB"/><rect x="21" y="35" width="17" height="3.5" rx="1.75" fill="#fff"/></svg>
+        <div class="bub d"><span data-i18n="dl.a1">Yes — up to </span><span class="lit" style="color:var(--ink)" data-i18n="dl.a2">5 days</span><span data-i18n="dl.a3"> may be carried into the next year and must be used by 31 March.</span><br><span class="src"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M2 0h6l4 4v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2Zm6 1v3h3"/></svg><span data-i18n="dl.src">Leave Policy 2026 · p.4</span></span></div>
+      </div>
+      <div class="ch"><span data-i18n="dl.chnote">Answered from your documents</span><span class="wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5A9.5 9.5 0 0 0 4.3 17.4L3 21.5l4.2-1.3A9.5 9.5 0 1 0 12 2.5Z"/></svg>WhatsApp</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="why.eyebrow">Why ApixONN</span>
+      <h2 data-i18n="why.h2">Built for how business really runs here</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 4v16"/></svg></div><h3 data-i18n="why.1t">One source of truth</h3><p data-i18n="why.1p">Finance, HR, projects and assets share one database — enter it once, and it's right everywhere.</p></div>
+      <div class="why reveal"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M20 15l2 2-2 2"/></svg></div><h3 data-i18n="why.2t">Arabic-first, RTL-native</h3><p data-i18n="why.2p">Not a translation layer bolted on — the whole system and Dalil work naturally in Arabic and English.</p></div>
+      <div class="why reveal"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3 data-i18n="why.3t">Made in Qatar</h3><p data-i18n="why.3p">Built for the Gulf's currencies, rules and ways of working — and supported close to home.</p></div>
+      <div class="why reveal"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></div><h3 data-i18n="why.4t">Your data stays yours</h3><p data-i18n="why.4p">Documents are used only to answer your questions — never to train public AI models. Access is controlled and audited.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT / CTA ===================== -->
 <section id="contact">
   <div class="wrap">
-    <div class="contact-band">
-      <div class="contact-grid">
+    <div class="cta-band reveal">
+      <div class="cta-grid">
         <div>
-          <h2 data-i18n="contact.h2">Let's talk</h2>
-          <p data-i18n="contact.sub">Tell us about your business and we'll show you how ApixONN and Dalil fit — in the browser, and on WhatsApp.</p>
-          <a class="btn btn-primary" href="mailto:info@apixonn.com">
-            <span data-i18n="contact.cta">Contact us</span>
-            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <h2 data-i18n="cta.h2">See it on your own documents</h2>
+          <p data-i18n="cta.sub">Tell us about your business and we'll show you ApixONN and Dalil working on your real manuals and data — in the browser and on WhatsApp.</p>
+          <a class="btn btn-primary" href="mailto:info@apixonn.com" style="margin-top:24px"><span data-i18n="cta.btn">Contact us</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <div class="contact-info">
-          <a href="mailto:info@apixonn.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
-            info@apixonn.com
-          </a>
-          <span class="row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
-            <span data-i18n="contact.loc">Qatar</span>
-          </span>
+        <div class="cta-info">
+          <a href="mailto:info@apixonn.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>info@apixonn.com</a>
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="cta.loc">Qatar</span></span>
         </div>
       </div>
     </div>
@@ -338,84 +422,130 @@
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="site">
-  <div class="wrap foot">
-    <span class="fbrand">
-      <svg class="mark" viewBox="0 0 500 500" aria-hidden="true"><rect width="500" height="500" rx="118" fill="#1d194c"/><path d="M250 96 348 264h-36c-16 0-27-7-35-20l-27-44-27 44c-8 13-19 20-35 20h-36z" fill="#9fabfe"/><path d="M250 278l38 52c8 10 18 15 30 15h42c12 0 23 6 29 16l23 37h-82c-12 0-22-6-28-16l-16-27c-3-5-7-7-12-7h-48c-5 0-9 2-12 7l-16 27c-6 10-16 16-28 16H88l23-37c6-10 17-16 29-16h42c12 0 22-5 30-15z" fill="#9fabfe"/></svg>
-      ApixONN
-    </span>
-    <span class="fmeta">
-      <span data-i18n="footer.copy">© 2026 ApixONN, Qatar</span>
-      <span class="sep">·</span>
-      <a href="mailto:info@apixonn.com">info@apixonn.com</a>
-      <span class="sep">·</span>
-      <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
-    </span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="fb"><svg class="mark" viewBox="0 0 500 500" aria-hidden="true"><rect width="500" height="500" rx="118" fill="#1d194c"/><path d="M250 96 348 264h-36c-16 0-27-7-35-20l-27-44-27 44c-8 13-19 20-35 20h-36z" fill="#9fabfe"/><path d="M250 278l38 52c8 10 18 15 30 15h42c12 0 23 6 29 16l23 37h-82c-12 0-22-6-28-16l-16-27c-3-5-7-7-12-7h-48c-5 0-9 2-12 7l-16 27c-6 10-16 16-28 16H88l23-37c6-10 17-16 29-16h42c12 0 22-5 30-15z" fill="#9fabfe"/></svg><span><b>Apix</b><span class="onn">ONN</span></span></span>
+        <p data-i18n="foot.tag">The business platform built in Qatar — an ERP that runs your operations, and Dalil, the assistant that answers from your documents.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot.explore">Explore</h4>
+        <a href="#platform" data-i18n="nav.platform">Platform</a>
+        <a href="#dalil" data-i18n="nav.dalil">Dalil</a>
+        <a href="#why" data-i18n="nav.why">Why ApixONN</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Privacy policy</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot.contact">Contact</h4>
+        <a href="mailto:info@apixonn.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>info@apixonn.com</a>
+        <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="cta.loc">Qatar</span></span>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span data-i18n="foot.copy">© 2026 ApixONN, Qatar. All rights reserved.</span>
+      <a href="privacy.html" data-i18n="foot.privacy">Privacy policy</a>
+    </div>
   </div>
 </footer>
 
 <script>
   const I18N = {
     en: {
-      "nav.products":"Products","nav.contact":"Contact","nav.cta":"Contact us",
-      "hero.eyebrow":"Business software · Qatar",
-      "hero.h1a":"Software that runs your business","hero.h1b":"and answers your questions.",
-      "hero.sub":"An ERP system for your operations, and Dalil, an AI assistant that answers from your company's own documents.",
-      "hero.cta":"Contact us","hero.note":"Arabic & English · Made in Qatar",
+      "top":"Built in Qatar · Arabic & English · In the browser and on WhatsApp",
+      "nav.platform":"Platform","nav.dalil":"Dalil","nav.why":"Why ApixONN","nav.contact":"Contact","nav.cta":"Contact us",
+      "hero.eyebrow":"The business platform · Qatar",
+      "hero.h1a":"Run your business —","hero.h1b":"and get answers from it.",
+      "hero.sub":"ApixONN is one ERP for finance, HR, payroll, projects, inventory and property — and Dalil, an AI assistant that answers from your company's own documents, citing the exact page. Arabic and English.",
+      "hero.cta1":"Contact us","hero.cta2":"Explore the platform",
+      "hero.m1n":"8 modules","hero.m1l":"One connected system","hero.m2n":"AR + EN","hero.m2l":"Bilingual, RTL-ready","hero.m3n":"Cited","hero.m3l":"Every answer, to the page",
       "ops.title":"Operations · this month","ops.t1":"Revenue","ops.t2":"Projects","ops.t3":"Utilization",
-      "dalil.live":"Live","dalil.q":"What's the leave policy for new hires?",
-      "dalil.a1":"New employees accrue ","dalil.a2":"2.5 days of annual leave per month","dalil.a3":" after a 3-month probation.",
-      "dalil.cite":"Employee Handbook · p.12",
-      "prod.eyebrow":"Products","prod.h2":"One platform, two jobs",
-      "prod.sub":"A system that does the work, and an assistant that knows the answers — both in Arabic and English.",
-      "erp.desc":"One system for the whole business. Approvals, reporting, and an employee portal are built in, so your operations run in one place instead of a dozen spreadsheets.",
-      "erp.f1":"Finance & accounting","erp.f2":"HR & payroll","erp.f3":"Projects","erp.f4":"Inventory","erp.f5":"Property","erp.f6":"Sales & clients",
-      "dalil.desc":"Ask a question and get the answer from your own manuals, contracts, schedules, and emails — with the exact page cited. Everyone only sees the files they're allowed to.",
-      "dalil.c1":"Arabic & English","dalil.c2":"Cites the page","dalil.c3":"Permission-aware","dalil.c4":"Browser + WhatsApp",
-      "contact.h2":"Let's talk",
-      "contact.sub":"Tell us about your business and we'll show you how ApixONN and Dalil fit — in the browser, and on WhatsApp.",
-      "contact.cta":"Contact us","contact.loc":"Qatar",
-      "footer.copy":"© 2026 ApixONN, Qatar","footer.privacy":"Privacy policy"
+      "dalil.live":"Live","dalil.q":"What's the leave policy for new hires?","dalil.a1":"New employees accrue ","dalil.a2":"2.5 days per month","dalil.a3":" after a 3-month probation.","dalil.cite":"Employee Handbook · p.12",
+      "strip.1":"One source of truth","strip.2":"Arabic & English","strip.3":"Made in Qatar","strip.4":"Your data stays yours",
+      "plat.eyebrow":"The ApixONN ERP","plat.h2":"One system for the whole business",
+      "plat.sub":"Finance, people, projects and assets in one connected platform — with approvals, reporting and an employee portal built in. No more a dozen disconnected spreadsheets.",
+      "m.fin.t":"Finance & Accounting","m.fin.p":"Invoices, receipts, journals, chart of accounts, bills, POs, bank reconciliation, budgets and tax — real double-entry GL.",
+      "m.hr.t":"HR & Payroll","m.hr.p":"Employees, contracts, grades, leaves, attendance and org chart — plus a full payroll engine: cycles, payslips, loans, tax, bank files.",
+      "m.proj.t":"Projects & Resources","m.proj.p":"Phases and milestones, risks, budgets, earned-value analytics, allocations, timesheets and capacity planning.",
+      "m.inv.t":"Inventory","m.inv.p":"Products and suppliers, goods received (GRN), goods issued and live stock — every movement posted to the ledger.",
+      "m.prop.t":"Property","m.prop.p":"Portfolios and units, leases, deposits and cheques, maintenance, and owner statements & settlements.",
+      "m.sales.t":"Clients & Sales","m.sales.p":"Clients, an opportunity pipeline and statements of work — the commercial hub every project and invoice hangs off.",
+      "m.wf.t":"Workflow & Approvals","m.wf.p":"Multi-step approvals with separation of duties across the whole system — nothing big moves on one person's say-so.",
+      "m.rep.t":"Reports & Analytics","m.rep.p":"Financial statements, HR, payroll, projects and resource analytics — the numbers, always reconciled to the ledger.",
+      "plat.ewp":"Employee Web Portal","plat.ewpnote":"Every employee gets self-service: timesheets, leave and HR requests, tasks, documents and their profile.",
+      "dl.h2":"The assistant that reads your documents",
+      "dl.lead":"Ask a question in plain language and Dalil answers from your own manuals, contracts, schedules and emails — and shows you the exact page it came from. No hunting through folders.",
+      "dl.f1t":"Cites the exact page","dl.f1p":"Every answer links back to the source document and page, so you can trust it and check it.",
+      "dl.f2t":"Arabic & English","dl.f2p":"Ask in either language and get a clear answer in the same one — built bilingual from day one.",
+      "dl.f3t":"Permission-aware","dl.f3p":"Everyone only sees answers from the files they're allowed to — access rules are respected on every question.",
+      "dl.f4t":"Browser + WhatsApp","dl.f4p":"Use Dalil on the web, or just message it on WhatsApp — the answer, wherever your team already works.",
+      "dl.q":"Can I carry over unused annual leave to next year?","dl.a1":"Yes — up to ","dl.a2":"5 days","dl.a3":" may be carried into the next year and must be used by 31 March.","dl.src":"Leave Policy 2026 · p.4","dl.chnote":"Answered from your documents",
+      "why.eyebrow":"Why ApixONN","why.h2":"Built for how business really runs here",
+      "why.1t":"One source of truth","why.1p":"Finance, HR, projects and assets share one database — enter it once, and it's right everywhere.",
+      "why.2t":"Arabic-first, RTL-native","why.2p":"Not a translation layer bolted on — the whole system and Dalil work naturally in Arabic and English.",
+      "why.3t":"Made in Qatar","why.3p":"Built for the Gulf's currencies, rules and ways of working — and supported close to home.",
+      "why.4t":"Your data stays yours","why.4p":"Documents are used only to answer your questions — never to train public AI models. Access is controlled and audited.",
+      "cta.h2":"See it on your own documents","cta.sub":"Tell us about your business and we'll show you ApixONN and Dalil working on your real manuals and data — in the browser and on WhatsApp.","cta.btn":"Contact us","cta.loc":"Qatar",
+      "foot.tag":"The business platform built in Qatar — an ERP that runs your operations, and Dalil, the assistant that answers from your documents.",
+      "foot.explore":"Explore","foot.contact":"Contact","foot.privacy":"Privacy policy","foot.copy":"© 2026 ApixONN, Qatar. All rights reserved."
     },
     ar: {
-      "nav.products":"المنتجات","nav.contact":"تواصل","nav.cta":"تواصل معنا",
-      "hero.eyebrow":"برمجيات للأعمال · قطر",
-      "hero.h1a":"برمجيات تُدير أعمالك","hero.h1b":"وتُجيب عن أسئلتك.",
-      "hero.sub":"نظام ERP لعملياتك، ومساعد ذكي «دليل» يُجيب من مستندات شركتك نفسها.",
-      "hero.cta":"تواصل معنا","hero.note":"بالعربية والإنجليزية · صُنع في قطر",
+      "top":"صُنع في قطر · بالعربية والإنجليزية · في المتصفح وعلى واتساب",
+      "nav.platform":"المنصّة","nav.dalil":"دليل","nav.why":"لماذا ApixONN","nav.contact":"تواصل","nav.cta":"تواصل معنا",
+      "hero.eyebrow":"منصّة الأعمال · قطر",
+      "hero.h1a":"أدِر أعمالك —","hero.h1b":"واحصل على الإجابات منها.",
+      "hero.sub":"‏ApixONN نظام ERP واحد للمالية والموارد البشرية والرواتب والمشاريع والمخزون والعقارات — ومساعد ذكي «دليل» يُجيب من مستندات شركتك نفسها مع الإشارة إلى الصفحة بالضبط. بالعربية والإنجليزية.",
+      "hero.cta1":"تواصل معنا","hero.cta2":"استكشف المنصّة",
+      "hero.m1n":"٨ وحدات","hero.m1l":"نظام واحد مترابط","hero.m2n":"عربي + إنجليزي","hero.m2l":"ثنائي اللغة، يدعم RTL","hero.m3n":"موثّق","hero.m3l":"كل إجابة، إلى الصفحة",
       "ops.title":"العمليات · هذا الشهر","ops.t1":"الإيرادات","ops.t2":"المشاريع","ops.t3":"معدّل التشغيل",
-      "dalil.live":"مباشر","dalil.q":"ما سياسة الإجازات للموظفين الجدد؟",
-      "dalil.a1":"يستحق الموظفون الجدد ","dalil.a2":"٢٫٥ يوم إجازة سنوية شهريًا","dalil.a3":" بعد فترة تجربة مدتها ٣ أشهر.",
-      "dalil.cite":"دليل الموظف · صفحة ١٢",
-      "prod.eyebrow":"المنتجات","prod.h2":"منصّة واحدة، مهمّتان",
-      "prod.sub":"نظام يُنجز العمل، ومساعد يعرف الإجابات — كلاهما بالعربية والإنجليزية.",
-      "erp.desc":"نظام واحد لكامل الأعمال. الموافقات والتقارير وبوابة الموظفين مدمجة، لتُدار عملياتك في مكان واحد بدل عشرات الجداول.",
-      "erp.f1":"المالية والمحاسبة","erp.f2":"الموارد البشرية والرواتب","erp.f3":"المشاريع","erp.f4":"المخزون","erp.f5":"العقارات","erp.f6":"المبيعات والعملاء",
-      "dalil.desc":"اسأل سؤالًا واحصل على الإجابة من أدلتك وعقودك وجداولك وبريدك — مع الإشارة إلى الصفحة بالضبط. كل شخص يرى فقط الملفات المسموح له بها.",
-      "dalil.c1":"العربية والإنجليزية","dalil.c2":"يُشير إلى الصفحة","dalil.c3":"يحترم الصلاحيات","dalil.c4":"المتصفح وواتساب",
-      "contact.h2":"لنتحدّث",
-      "contact.sub":"أخبرنا عن أعمالك وسنُريك كيف يناسبك ApixONN و«دليل» — في المتصفح وعلى واتساب.",
-      "contact.cta":"تواصل معنا","contact.loc":"قطر",
-      "footer.copy":"© ٢٠٢٦ ApixONN، قطر","footer.privacy":"سياسة الخصوصية"
+      "dalil.live":"مباشر","dalil.q":"ما سياسة الإجازات للموظفين الجدد؟","dalil.a1":"يستحق الموظفون الجدد ","dalil.a2":"٢٫٥ يوم شهريًا","dalil.a3":" بعد فترة تجربة مدتها ٣ أشهر.","dalil.cite":"دليل الموظف · ص ١٢",
+      "strip.1":"مصدر واحد للحقيقة","strip.2":"العربية والإنجليزية","strip.3":"صُنع في قطر","strip.4":"بياناتك تبقى لك",
+      "plat.eyebrow":"‏نظام ApixONN","plat.h2":"نظام واحد لكامل الأعمال",
+      "plat.sub":"المالية والأشخاص والمشاريع والأصول في منصّة واحدة مترابطة — مع الموافقات والتقارير وبوابة الموظفين مدمجة. لا مزيد من عشرات الجداول المنفصلة.",
+      "m.fin.t":"المالية والمحاسبة","m.fin.p":"الفواتير والسندات والقيود ودليل الحسابات والمشتريات والتسويات البنكية والموازنات والضرائب — قيد مزدوج حقيقي.",
+      "m.hr.t":"الموارد البشرية والرواتب","m.hr.p":"الموظفون والعقود والدرجات والإجازات والحضور والهيكل التنظيمي — ونظام رواتب كامل: الدورات وكشوف الرواتب والقروض والضرائب وملفات البنوك.",
+      "m.proj.t":"المشاريع والموارد","m.proj.p":"المراحل والإنجازات والمخاطر والموازنات وتحليلات القيمة المكتسبة والتخصيصات والجداول الزمنية وتخطيط الطاقة.",
+      "m.inv.t":"المخزون","m.inv.p":"المنتجات والموردون واستلام البضائع (GRN) وصرفها والمخزون الحي — كل حركة تُرحَّل إلى دفتر الأستاذ.",
+      "m.prop.t":"العقارات","m.prop.p":"المحافظ والوحدات وعقود الإيجار والتأمينات والشيكات والصيانة وكشوف الملّاك والتسويات.",
+      "m.sales.t":"العملاء والمبيعات","m.sales.p":"العملاء وخطّ الفرص البيعية وبيانات العمل (SOW) — المركز التجاري الذي يرتبط به كل مشروع وفاتورة.",
+      "m.wf.t":"سير العمل والموافقات","m.wf.p":"موافقات متعددة الخطوات مع فصل المهام عبر النظام بأكمله — لا شيء كبير يمرّ بقرار شخص واحد.",
+      "m.rep.t":"التقارير والتحليلات","m.rep.p":"القوائم المالية وتقارير الموارد البشرية والرواتب والمشاريع والموارد — أرقام مطابقة دائمًا لدفتر الأستاذ.",
+      "plat.ewp":"بوابة الموظفين","plat.ewpnote":"كل موظف يحصل على خدمة ذاتية: الجداول الزمنية والإجازات وطلبات الموارد البشرية والمهام والمستندات وملفه الشخصي.",
+      "dl.h2":"المساعد الذي يقرأ مستنداتك",
+      "dl.lead":"اسأل بلغة بسيطة، ويُجيب «دليل» من أدلتك وعقودك وجداولك وبريدك — ويُريك الصفحة التي جاءت منها الإجابة بالضبط. دون البحث في المجلدات.",
+      "dl.f1t":"يُشير إلى الصفحة بالضبط","dl.f1p":"كل إجابة ترتبط بالمستند المصدر والصفحة، لتثق بها وتتحقق منها.",
+      "dl.f2t":"العربية والإنجليزية","dl.f2p":"اسأل بأي لغة واحصل على إجابة واضحة باللغة نفسها — ثنائي اللغة منذ البداية.",
+      "dl.f3t":"يحترم الصلاحيات","dl.f3p":"كل شخص يرى فقط إجابات من الملفات المسموح له بها — تُحترم قواعد الوصول في كل سؤال.",
+      "dl.f4t":"المتصفح وواتساب","dl.f4p":"استخدم «دليل» على الويب، أو راسله على واتساب — الإجابة أينما يعمل فريقك بالفعل.",
+      "dl.q":"هل يمكنني ترحيل الإجازة السنوية غير المستخدمة للعام القادم؟","dl.a1":"نعم — حتى ","dl.a2":"٥ أيام","dl.a3":" يمكن ترحيلها للعام القادم على أن تُستخدم قبل ٣١ مارس.","dl.src":"سياسة الإجازات ٢٠٢٦ · ص ٤","dl.chnote":"الإجابة من مستنداتك",
+      "why.eyebrow":"لماذا ApixONN","why.h2":"مبنيّ لطريقة عمل الأعمال هنا فعلًا",
+      "why.1t":"مصدر واحد للحقيقة","why.1p":"المالية والموارد البشرية والمشاريع والأصول تتشارك قاعدة بيانات واحدة — أدخلها مرة، وتكون صحيحة في كل مكان.",
+      "why.2t":"العربية أولًا، RTL أصيل","why.2p":"ليست طبقة ترجمة مُضافة — النظام بأكمله و«دليل» يعملان بالعربية والإنجليزية بشكل طبيعي.",
+      "why.3t":"صُنع في قطر","why.3p":"مبنيّ لعملات الخليج وأنظمته وطرق عمله — ومدعوم من قريب.",
+      "why.4t":"بياناتك تبقى لك","why.4p":"تُستخدم المستندات فقط للإجابة عن أسئلتك — لا لتدريب نماذج ذكاء اصطناعي عامة. الوصول مُتحكَّم به ومُدقَّق.",
+      "cta.h2":"شاهده على مستنداتك أنت","cta.sub":"أخبرنا عن أعمالك وسنُريك ApixONN و«دليل» يعملان على أدلتك وبياناتك الحقيقية — في المتصفح وعلى واتساب.","cta.btn":"تواصل معنا","cta.loc":"قطر",
+      "foot.tag":"منصّة الأعمال المصنوعة في قطر — نظام ERP يُدير عملياتك، و«دليل» المساعد الذي يُجيب من مستنداتك.",
+      "foot.explore":"استكشف","foot.contact":"تواصل","foot.privacy":"سياسة الخصوصية","foot.copy":"© ٢٠٢٦ ApixONN، قطر. جميع الحقوق محفوظة."
     }
   };
   function applyLang(lang){
-    const dict = I18N[lang] || I18N.en;
-    const html = document.documentElement;
-    html.lang = lang; html.dir = lang === 'ar' ? 'rtl' : 'ltr'; html.setAttribute('data-lang', lang);
-    document.querySelectorAll('[data-i18n]').forEach(el=>{
-      const k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k];
-    });
-    document.querySelectorAll('[data-set-lang]').forEach(b=>{
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
-    });
-    try{ localStorage.setItem('apx_lang', lang); }catch(e){}
+    const dict=I18N[lang]||I18N.en, html=document.documentElement;
+    html.lang=lang; html.dir=lang==='ar'?'rtl':'ltr'; html.setAttribute('data-lang',lang);
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(dict[k]!=null) el.textContent=dict[k];});
+    document.querySelectorAll('[data-set-lang]').forEach(b=>b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang')===lang)));
+    try{localStorage.setItem('apx_lang',lang);}catch(e){}
   }
-  document.querySelectorAll('[data-set-lang]').forEach(b=>{
-    b.addEventListener('click', ()=> applyLang(b.getAttribute('data-set-lang')));
-  });
-  let start = 'en';
-  try{ const s = localStorage.getItem('apx_lang'); if (s === 'ar' || s === 'en') start = s; }catch(e){}
-  if (start !== 'en') applyLang(start);
+  document.querySelectorAll('[data-set-lang]').forEach(b=>b.addEventListener('click',()=>applyLang(b.getAttribute('data-set-lang'))));
+  (function(){let s='en';try{const v=localStorage.getItem('apx_lang');if(v==='ar'||v==='en')s=v;}catch(e){} if(s!=='en')applyLang(s);})();
+
+  // gentle reveal-on-scroll (content is readable at rest; this only adds a lift)
+  (function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const els=document.querySelectorAll('.reveal'); if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+    const io=new IntersectionObserver((en)=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    els.forEach(e=>io.observe(e));
+    // safety: anything already in view or if observer is slow, show within 1.2s
+    setTimeout(()=>els.forEach(e=>e.classList.add('in')),1200);
+  })();
 </script>
 </body>
 </html>
