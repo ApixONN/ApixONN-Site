@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · ApixONN</title>
+<meta name="description" content="How ApixONN and Dalil handle your data.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1942; --indigo:#3433C4; --indigo-2:#4B4AE0; --peri:#93A3FB; --mist:#E9EDFF;
+    --bg:#FAFAFE; --surface:#FFFFFF; --surface-2:#F4F5FD;
+    --fg:#1A1942; --fg-muted:#565591; --fg-faint:#8B8AB5;
+    --border:#E6E7F5; --border-strong:#D3D5EE;
+    --shadow:0 1px 2px rgba(26,25,66,.04), 0 12px 32px -12px rgba(26,25,66,.14);
+    --font:'Readex Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#F2F3FE; --indigo:#93A3FB; --indigo-2:#AEB6FF; --peri:#93A3FB; --mist:#211F52;
+      --bg:#0C0B22; --surface:#141235; --surface-2:#1B1945;
+      --fg:#F2F3FE; --fg-muted:#B7B8E4; --fg-faint:#8887B8;
+      --border:#282656; --border-strong:#343173;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#F2F3FE; --indigo:#93A3FB; --peri:#93A3FB; --mist:#211F52;
+    --bg:#0C0B22; --surface:#141235; --surface-2:#1B1945;
+    --fg:#F2F3FE; --fg-muted:#B7B8E4; --fg-faint:#8887B8; --border:#282656; --border-strong:#343173;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--font); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased}
+  h1,h2{margin:0; line-height:1.15; letter-spacing:-.02em; text-wrap:balance; font-weight:600}
+  a{color:var(--indigo); text-decoration:none} a:hover{text-decoration:underline}
+  ::selection{background:var(--peri); color:var(--ink)}
+  :focus-visible{outline:2.5px solid var(--indigo); outline-offset:3px; border-radius:6px}
+  .wrap{max-width:800px; margin-inline:auto; padding-inline:24px}
+  .eyebrow{font-size:.74rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--indigo)}
+  html[dir="rtl"] .eyebrow{letter-spacing:.02em}
+  .btn{display:inline-flex; align-items:center; gap:.5em; font-family:var(--font); font-weight:600; font-size:.92rem; padding:.55em 1.05em; border-radius:999px; border:1px solid var(--border-strong); color:var(--fg); background:var(--surface); text-decoration:none}
+  .btn:hover{background:var(--surface-2); text-decoration:none}
+
+  header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:saturate(160%) blur(12px); border-bottom:1px solid var(--border)}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:68px; max-width:1140px; margin-inline:auto; padding-inline:24px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-weight:600; font-size:1.16rem; color:var(--fg); letter-spacing:-.02em}
+  .brand .mark{width:34px; height:34px; flex:none}
+  .brand b{font-weight:700} .brand .onn{color:var(--indigo)}
+  .nav-right{display:flex; align-items:center; gap:10px}
+  .lang{display:inline-flex; border:1px solid var(--border-strong); border-radius:999px; overflow:hidden}
+  .lang button{font-family:var(--font); font-weight:600; font-size:.82rem; padding:.38em .8em; border:0; background:transparent; color:var(--fg-muted); cursor:pointer; line-height:1}
+  .lang button[aria-pressed="true"]{background:var(--indigo); color:#fff}
+
+  main{padding-block:56px 40px}
+  .doc-head{border-bottom:1px solid var(--border); padding-bottom:26px; margin-bottom:8px}
+  h1{font-size:clamp(1.9rem,4.5vw,2.6rem); margin-top:12px}
+  .updated{color:var(--fg-faint); font-size:.9rem; margin-top:12px}
+  .lead{color:var(--fg-muted); font-size:1.08rem; margin-top:18px; font-weight:300}
+  section.blk{padding-block:26px; border-bottom:1px solid var(--border)}
+  section.blk:last-of-type{border-bottom:0}
+  section.blk h2{font-size:1.18rem; display:flex; align-items:center; gap:11px}
+  section.blk h2 .n{flex:none; width:27px; height:27px; border-radius:8px; background:var(--mist); color:var(--indigo); font-size:.82rem; font-weight:700; display:grid; place-items:center}
+  section.blk p{color:var(--fg-muted); margin:12px 0 0}
+  section.blk ul{margin:12px 0 0; padding-inline-start:1.1em; color:var(--fg-muted)}
+  section.blk li{margin-top:7px}
+  section.blk b{color:var(--fg); font-weight:600}
+  .backrow{margin-top:36px}
+
+  footer.site{border-top:1px solid var(--border); padding-block:30px; margin-top:20px}
+  .foot{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; max-width:800px; margin-inline:auto; padding-inline:24px}
+  .foot .fbrand{display:inline-flex; align-items:center; gap:9px; font-weight:600; color:var(--fg)}
+  .foot .fbrand .mark{width:26px; height:26px}
+  .foot .fmeta{display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; color:var(--fg-muted); font-size:.9rem}
+  .foot .fmeta a{color:var(--fg-muted)} .foot .fmeta a:hover{color:var(--indigo)}
+  .foot .sep{color:var(--border-strong)}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html" aria-label="ApixONN home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#3433C4"/><path d="M13 29 L19.4 12 h1.2 L27 29 h-3.7 l-1.3-3.7 h-4 L16.7 29 Z M19.2 22.3 h1.6 L20 19.6 Z" fill="#fff"/></svg>
+      <span><b>Apix</b><span class="onn">ONN</span></span>
+    </a>
+    <div class="nav-right">
+      <a class="btn" href="index.html" data-i18n="back">Back to home</a>
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="ar" aria-pressed="false" lang="ar">ع</button>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="doc-head">
+      <div class="eyebrow" data-i18n="eyebrow">ApixONN &amp; Dalil</div>
+      <h1 data-i18n="title">Privacy policy</h1>
+      <p class="updated" data-i18n="updated">Last updated: 22 September 2026</p>
+      <p class="lead" data-i18n="lead">This policy explains what we collect, why, and the choices you have. It covers the ApixONN ERP and Dalil, our AI assistant, including when Dalil is used over WhatsApp.</p>
+    </div>
+
+    <section class="blk">
+      <h2><span class="n">1</span><span data-i18n="s1.h">Who we are</span></h2>
+      <p data-i18n="s1.p">ApixONN is a software company based in Qatar. For any privacy question, contact us at <a href="mailto:lnedal44@gmail.com">lnedal44@gmail.com</a>.</p>
+    </section>
+
+    <section class="blk">
+      <h2><span class="n">2</span><span data-i18n="s2.h">What we collect</span></h2>
+      <ul>
+        <li data-i18n="s2.l1"><b>Account details</b> — your name and email.</li>
+        <li data-i18n="s2.l2"><b>Documents you upload</b> — the files you give Dalil to answer from.</li>
+        <li data-i18n="s2.l3"><b>Questions and answers</b> — the questions asked and the answers given.</li>
+        <li data-i18n="s2.l4"><b>On WhatsApp</b> — your phone number, WhatsApp profile name, and the content of your messages.</li>
+      </ul>
+    </section>
+
+    <section class="blk">
+      <h2><span class="n">3</span><span data-i18n="s3.h">Why we collect it</span></h2>
+      <p data-i18n="s3.p">Only to provide the service — answering questions from your own documents. We do not use your documents to train public AI models.</p>
+    </section>
+
+    <section class="blk">
+      <h2><span class="n">4</span><span data-i18n="s4.h">Sharing</span></h2>
+      <p data-i18n="s4.p">We do not sell your data. We share it only with the providers needed to run the service: <b>Meta</b>, to deliver WhatsApp messages; our <b>hosting</b> provider; and <b>AI model providers</b> where they are used to generate an answer.</p>
+    </section>
+
+    <section class="blk">
+      <h2><span class="n">5</span><span data-i18n="s5.h">Storage and security</span></h2>
+      <p data-i18n="s5.p">Your data is stored securely, and access is limited to authorised people who need it to run the service.</p>
+    </section>
+
+    <section class="blk">
+      <h2><span class="n">6</span><span data-i18n="s6.h">Your rights</span></h2>
+      <p data-i18n="s6.p">You can ask to see or delete your data at any time by emailing <a href="mailto:lnedal44@gmail.com">lnedal44@gmail.com</a>. WhatsApp users can also send <b>"unlink"</b> at any time to stop and disconnect.</p>
+    </section>
+
+    <div class="backrow"><a class="btn" href="index.html" data-i18n="back">Back to home</a></div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <span class="fbrand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#3433C4"/><path d="M13 29 L19.4 12 h1.2 L27 29 h-3.7 l-1.3-3.7 h-4 L16.7 29 Z M19.2 22.3 h1.6 L20 19.6 Z" fill="#fff"/></svg>
+      ApixONN
+    </span>
+    <span class="fmeta">
+      <span data-i18n="footer.copy">© 2026 ApixONN, Qatar</span>
+      <span class="sep">·</span>
+      <a href="mailto:lnedal44@gmail.com">lnedal44@gmail.com</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const I18N = {
+    en:{
+      "back":"Back to home","eyebrow":"ApixONN & Dalil","title":"Privacy policy","updated":"Last updated: 22 September 2026",
+      "lead":"This policy explains what we collect, why, and the choices you have. It covers the ApixONN ERP and Dalil, our AI assistant, including when Dalil is used over WhatsApp.",
+      "s1.h":"Who we are","s1.p":"ApixONN is a software company based in Qatar. For any privacy question, contact us at lnedal44@gmail.com.",
+      "s2.h":"What we collect",
+      "s2.l1":"Account details — your name and email.","s2.l2":"Documents you upload — the files you give Dalil to answer from.",
+      "s2.l3":"Questions and answers — the questions asked and the answers given.","s2.l4":"On WhatsApp — your phone number, WhatsApp profile name, and the content of your messages.",
+      "s3.h":"Why we collect it","s3.p":"Only to provide the service — answering questions from your own documents. We do not use your documents to train public AI models.",
+      "s4.h":"Sharing","s4.p":"We do not sell your data. We share it only with the providers needed to run the service: Meta, to deliver WhatsApp messages; our hosting provider; and AI model providers where they are used to generate an answer.",
+      "s5.h":"Storage and security","s5.p":"Your data is stored securely, and access is limited to authorised people who need it to run the service.",
+      "s6.h":"Your rights","s6.p":"You can ask to see or delete your data at any time by emailing lnedal44@gmail.com. WhatsApp users can also send \"unlink\" at any time to stop and disconnect.",
+      "footer.copy":"© 2026 ApixONN, Qatar"
+    },
+    ar:{
+      "back":"العودة للرئيسية","eyebrow":"ApixONN و«دليل»","title":"سياسة الخصوصية","updated":"آخر تحديث: ٢٢ سبتمبر ٢٠٢٦",
+      "lead":"توضّح هذه السياسة ما الذي نجمعه ولماذا، والخيارات المتاحة لك. تشمل نظام ApixONN ومساعدنا الذكي «دليل»، بما في ذلك استخدام «دليل» عبر واتساب.",
+      "s1.h":"من نحن","s1.p":"ApixONN شركة برمجيات مقرّها قطر. لأي استفسار يخص الخصوصية، تواصل معنا على lnedal44@gmail.com.",
+      "s2.h":"ما الذي نجمعه",
+      "s2.l1":"بيانات الحساب — اسمك وبريدك الإلكتروني.","s2.l2":"المستندات التي ترفعها — الملفات التي تمنحها لـ«دليل» ليُجيب منها.",
+      "s2.l3":"الأسئلة والأجوبة — الأسئلة المطروحة والأجوبة المقدَّمة.","s2.l4":"على واتساب — رقم هاتفك، واسم ملفك على واتساب، ومحتوى رسائلك.",
+      "s3.h":"لماذا نجمعها","s3.p":"فقط لتقديم الخدمة — الإجابة عن الأسئلة من مستنداتك الخاصة. لا نستخدم مستنداتك لتدريب نماذج ذكاء اصطناعي عامة.",
+      "s4.h":"المشاركة","s4.p":"لا نبيع بياناتك. نشاركها فقط مع مزوّدي الخدمة اللازمين لتشغيلها: «Meta» لإيصال رسائل واتساب؛ ومزوّد الاستضافة؛ ومزوّدو نماذج الذكاء الاصطناعي عند استخدامهم لتوليد الإجابة.",
+      "s5.h":"التخزين والأمان","s5.p":"تُخزَّن بياناتك بشكل آمن، والوصول إليها مقصور على الأشخاص المخوَّلين الذين يحتاجونها لتشغيل الخدمة.",
+      "s6.h":"حقوقك","s6.p":"يمكنك طلب الاطّلاع على بياناتك أو حذفها في أي وقت عبر مراسلة lnedal44@gmail.com. ويمكن لمستخدمي واتساب أيضًا إرسال كلمة «unlink» في أي وقت للإيقاف وفصل الحساب.",
+      "footer.copy":"© ٢٠٢٦ ApixONN، قطر"
+    }
+  };
+  function applyLang(lang){
+    const dict=I18N[lang]||I18N.en, html=document.documentElement;
+    html.lang=lang; html.dir=lang==='ar'?'rtl':'ltr'; html.setAttribute('data-lang',lang);
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(dict[k]!=null) el.textContent=dict[k];});
+    document.querySelectorAll('[data-set-lang]').forEach(b=>b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang')===lang)));
+    try{localStorage.setItem('apx_lang',lang);}catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(b=>b.addEventListener('click',()=>applyLang(b.getAttribute('data-set-lang'))));
+  let start='en'; try{const s=localStorage.getItem('apx_lang'); if(s==='ar'||s==='en') start=s;}catch(e){}
+  if(start!=='en') applyLang(start);
+</script>
+</body>
+</html>

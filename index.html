@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ApixONN</title>
+<meta name="description" content="ApixONN builds business software in Qatar: an ERP that runs your operations, and Dalil, an AI assistant that answers from your company's own documents.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="ApixONN">
+<meta property="og:description" content="Software that runs your business and answers your questions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apixonn.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1942; --indigo:#3433C4; --indigo-2:#4B4AE0; --peri:#93A3FB; --mist:#E9EDFF;
+    --bg:#FAFAFE; --surface:#FFFFFF; --surface-2:#F4F5FD;
+    --fg:#1A1942; --fg-muted:#565591; --fg-faint:#8B8AB5;
+    --border:#E6E7F5; --border-strong:#D3D5EE;
+    --hero-1:#201F52; --hero-2:#14133A; --on-hero:#EDEEFF; --on-hero-muted:#AEB0E6;
+    --shadow:0 1px 2px rgba(26,25,66,.04), 0 12px 32px -12px rgba(26,25,66,.14);
+    --shadow-lg:0 24px 60px -24px rgba(20,19,58,.45);
+    --radius:18px;
+    --font:'Readex Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --maxw:1140px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#F2F3FE; --indigo:#93A3FB; --indigo-2:#AEB6FF; --peri:#93A3FB; --mist:#211F52;
+      --bg:#0C0B22; --surface:#141235; --surface-2:#1B1945;
+      --fg:#F2F3FE; --fg-muted:#B7B8E4; --fg-faint:#8887B8;
+      --border:#282656; --border-strong:#343173;
+      --hero-1:#1B1A47; --hero-2:#0D0C28; --on-hero:#EDEEFF; --on-hero-muted:#AEB0E6;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.55);
+      --shadow-lg:0 30px 70px -28px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#F2F3FE; --indigo:#93A3FB; --indigo-2:#AEB6FF; --peri:#93A3FB; --mist:#211F52;
+    --bg:#0C0B22; --surface:#141235; --surface-2:#1B1945;
+    --fg:#F2F3FE; --fg-muted:#B7B8E4; --fg-faint:#8887B8;
+    --border:#282656; --border-strong:#343173;
+    --hero-1:#1B1A47; --hero-2:#0D0C28;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.55);
+    --shadow-lg:0 30px 70px -28px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:var(--font); font-weight:400; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3{margin:0; line-height:1.12; letter-spacing:-.02em; text-wrap:balance; font-weight:600}
+  p{margin:0}
+  a{color:inherit; text-decoration:none}
+  ::selection{background:var(--peri); color:var(--ink)}
+  :focus-visible{outline:2.5px solid var(--indigo); outline-offset:3px; border-radius:6px}
+
+  .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:24px}
+  .eyebrow{font-size:.74rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--indigo)}
+  html[dir="rtl"] .eyebrow{letter-spacing:.02em}
+
+  /* ---- buttons ---- */
+  .btn{display:inline-flex; align-items:center; gap:.55em; font-family:var(--font); font-weight:600; font-size:.98rem;
+    padding:.82em 1.5em; border-radius:999px; border:1px solid transparent; cursor:pointer; transition:transform .15s ease, box-shadow .2s ease, background .2s ease}
+  .btn-primary{background:var(--indigo); color:#fff; box-shadow:0 10px 24px -10px rgba(52,51,196,.7)}
+  .btn-primary:hover{transform:translateY(-1px); background:var(--indigo-2)}
+  .btn-ghost{background:transparent; color:var(--on-hero); border-color:rgba(255,255,255,.24)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+  .btn svg{width:1.05em; height:1.05em}
+  html[dir="rtl"] .btn .arr{transform:scaleX(-1)}
+
+  /* ---- header ---- */
+  header.site{position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:saturate(160%) blur(12px);
+    border-bottom:1px solid var(--border)}
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:68px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-weight:600; font-size:1.16rem; color:var(--fg); letter-spacing:-.02em}
+  .brand .mark{width:34px; height:34px; flex:none}
+  .brand b{font-weight:700}
+  .brand .onn{color:var(--indigo)}
+  .nav-links{display:flex; align-items:center; gap:8px}
+  .nav-links a.link{padding:.5em .85em; border-radius:10px; color:var(--fg-muted); font-weight:500; font-size:.95rem}
+  .nav-links a.link:hover{color:var(--fg); background:var(--surface-2)}
+  .lang{display:inline-flex; align-items:center; gap:0; border:1px solid var(--border-strong); border-radius:999px; overflow:hidden; margin-inline-start:4px}
+  .lang button{font-family:var(--font); font-weight:600; font-size:.82rem; padding:.38em .8em; border:0; background:transparent; color:var(--fg-muted); cursor:pointer; line-height:1}
+  .lang button[aria-pressed="true"]{background:var(--indigo); color:#fff}
+  .nav-cta{display:none}
+  @media(min-width:720px){ .nav-cta{display:inline-flex} }
+
+  /* ---- hero ---- */
+  .hero{position:relative; overflow:hidden; color:var(--on-hero);
+    background:radial-gradient(120% 130% at 85% 0%, var(--hero-1) 0%, var(--hero-2) 60%)}
+  .hero::before{content:""; position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(38% 44% at 82% 18%, rgba(147,163,251,.28), transparent 70%),
+      radial-gradient(30% 30% at 12% 92%, rgba(52,51,196,.45), transparent 72%);}
+  .hero .grid-lines{position:absolute; inset:0; opacity:.5;
+    background-image:linear-gradient(rgba(147,163,251,.07) 1px, transparent 1px),linear-gradient(90deg, rgba(147,163,251,.07) 1px, transparent 1px);
+    background-size:46px 46px; -webkit-mask-image:radial-gradient(120% 90% at 70% 10%, #000 30%, transparent 78%); mask-image:radial-gradient(120% 90% at 70% 10%, #000 30%, transparent 78%)}
+  .hero-inner{position:relative; display:grid; grid-template-columns:1fr; gap:44px; align-items:center;
+    padding-block:64px 76px}
+  @media(min-width:900px){ .hero-inner{grid-template-columns:1.02fr .98fr; gap:52px; padding-block:88px 96px} }
+  .hero .eyebrow{color:var(--peri)}
+  .hero h1{font-size:clamp(2.15rem, 5.2vw, 3.5rem); font-weight:600; color:#fff; margin-top:16px}
+  .hero h1 .hl{color:var(--peri)}
+  .hero .sub{margin-top:20px; font-size:clamp(1.02rem,1.6vw,1.2rem); color:var(--on-hero-muted); max-width:34em; font-weight:300}
+  .hero .cta-row{margin-top:32px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+  .hero .cta-note{font-size:.86rem; color:var(--on-hero-muted)}
+
+  /* ---- hero visual: ops panel + dalil card ---- */
+  .visual{position:relative; min-height:340px}
+  .ops{position:relative; background:rgba(255,255,255,.055); border:1px solid rgba(147,163,251,.22); border-radius:20px; padding:20px; backdrop-filter:blur(6px);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+  .ops-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px}
+  .ops-head .t{font-size:.82rem; font-weight:600; color:#fff; letter-spacing:.02em}
+  .ops-head .dot{display:flex; gap:5px}
+  .ops-head .dot i{width:8px; height:8px; border-radius:50%; background:rgba(147,163,251,.4)}
+  .tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+  .tile{background:rgba(13,12,40,.4); border:1px solid rgba(147,163,251,.14); border-radius:12px; padding:11px 12px}
+  .tile .lb{font-size:.64rem; color:var(--peri); font-weight:500; letter-spacing:.03em}
+  .tile .vl{font-size:1.02rem; font-weight:700; color:#fff; margin-top:3px; font-variant-numeric:tabular-nums}
+  .bars{display:flex; align-items:flex-end; gap:6px; height:56px; margin-top:14px; padding:0 2px}
+  .bars i{flex:1; background:linear-gradient(var(--peri), rgba(147,163,251,.35)); border-radius:4px 4px 0 0; opacity:.9}
+
+  .dalil-card{position:relative; margin-top:-46px; margin-inline-start:auto; width:min(100%,340px);
+    background:var(--surface); color:var(--fg); border:1px solid var(--border); border-radius:16px; padding:16px 17px; box-shadow:var(--shadow-lg)}
+  @media(min-width:900px){ .dalil-card{position:absolute; right:-14px; bottom:-30px; margin-top:0; width:320px} html[dir="rtl"] .dalil-card{right:auto; left:-14px} }
+  .dc-head{display:flex; align-items:center; gap:9px; margin-bottom:11px}
+  .dc-head .dm{width:26px; height:26px; flex:none}
+  .dc-head .nm{font-weight:600; font-size:.92rem; color:var(--fg)}
+  .dc-head .nm span{color:var(--fg-faint); font-weight:400; margin-inline-start:5px; font-size:.82rem}
+  .dc-head .live{margin-inline-start:auto; font-size:.64rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.28em .6em; border-radius:999px}
+  .q{font-size:.86rem; color:var(--fg-muted); background:var(--surface-2); border-radius:10px; padding:9px 11px; margin-bottom:10px}
+  .a{font-size:.9rem; color:var(--fg); line-height:1.5}
+  .a .lit{background:linear-gradient(transparent 62%, var(--peri) 0); padding:0 1px; color:var(--ink)}
+  .cite{display:inline-flex; align-items:center; gap:6px; margin-top:11px; font-size:.72rem; font-weight:600; color:var(--indigo); background:var(--mist); padding:.4em .7em; border-radius:8px}
+  .cite svg{width:12px; height:14px; flex:none}
+
+  /* ---- section base ---- */
+  section{padding-block:78px}
+  .sec-head{max-width:40rem}
+  .sec-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem); margin-top:12px}
+  .sec-head p{margin-top:14px; color:var(--fg-muted); font-size:1.05rem}
+
+  /* ---- products ---- */
+  .cards{display:grid; grid-template-columns:1fr; gap:22px; margin-top:44px}
+  @media(min-width:860px){ .cards{grid-template-columns:1fr 1fr} }
+  .card{position:relative; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
+  .card .badge{position:absolute; inset-block-start:0; inset-inline-end:0; width:150px; height:150px; background:radial-gradient(circle at 100% 0, var(--mist), transparent 70%); pointer-events:none}
+  .card .kh{display:flex; align-items:center; gap:13px; margin-bottom:18px}
+  .card .kh .m{width:44px; height:44px; flex:none; display:grid; place-items:center; border-radius:12px}
+  .card .kh h3{font-size:1.4rem; font-weight:600}
+  .card .kh h3 .ar{font-weight:500; color:var(--fg-faint); margin-inline-start:8px; font-size:1.1rem}
+  .card .kh .onn{color:var(--indigo)}
+  .card .desc{color:var(--fg-muted); font-size:1.02rem; flex:1}
+  .card .desc b{color:var(--fg); font-weight:600}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
+  .chip{font-size:.8rem; font-weight:500; color:var(--fg); background:var(--surface-2); border:1px solid var(--border); padding:.42em .8em; border-radius:999px; display:inline-flex; align-items:center; gap:6px}
+  .chip svg{width:13px; height:13px; color:var(--indigo)}
+  .erp-list{list-style:none; padding:0; margin:22px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:9px 14px}
+  .erp-list li{display:flex; align-items:center; gap:9px; font-size:.94rem; color:var(--fg)}
+  .erp-list li svg{width:16px; height:16px; color:var(--indigo); flex:none}
+
+  /* ---- contact ---- */
+  .contact-band{background:linear-gradient(135deg, var(--hero-1), var(--hero-2)); color:var(--on-hero); border-radius:26px; padding:52px 40px; position:relative; overflow:hidden}
+  .contact-band::after{content:""; position:absolute; inset:0; background:radial-gradient(40% 60% at 90% 10%, rgba(147,163,251,.22), transparent 70%); pointer-events:none}
+  .contact-grid{position:relative; display:grid; grid-template-columns:1fr; gap:28px; align-items:center}
+  @media(min-width:800px){ .contact-grid{grid-template-columns:1.3fr .7fr} }
+  .contact-grid h2{color:#fff; font-size:clamp(1.7rem,3.6vw,2.3rem)}
+  .contact-grid p{color:var(--on-hero-muted); margin-top:14px; font-size:1.05rem; max-width:30em; font-weight:300}
+  .contact-info{display:flex; flex-direction:column; gap:14px}
+  .contact-info a, .contact-info .row{display:inline-flex; align-items:center; gap:11px; color:#fff; font-weight:500; font-size:1.05rem}
+  .contact-info svg{width:20px; height:20px; color:var(--peri); flex:none}
+  .contact-band .btn-primary{margin-top:24px}
+
+  /* ---- footer ---- */
+  footer.site{border-top:1px solid var(--border); padding-block:34px; margin-top:12px}
+  .foot{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px}
+  .foot .fbrand{display:inline-flex; align-items:center; gap:9px; font-weight:600; color:var(--fg)}
+  .foot .fbrand .mark{width:26px; height:26px}
+  .foot .fmeta{display:flex; flex-wrap:wrap; align-items:center; gap:8px 18px; color:var(--fg-muted); font-size:.9rem}
+  .foot .fmeta a:hover{color:var(--indigo)}
+  .foot .sep{color:var(--border-strong)}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="ApixONN home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#3433C4"/><path d="M13 29 L19.4 12 h1.2 L27 29 h-3.7 l-1.3-3.7 h-4 L16.7 29 Z M19.2 22.3 h1.6 L20 19.6 Z" fill="#fff"/></svg>
+      <span><b>Apix</b><span class="onn">ONN</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="link" href="#products" data-i18n="nav.products">Products</a>
+      <a class="link" href="#contact" data-i18n="nav.contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="mailto:lnedal44@gmail.com" data-i18n="nav.cta">Contact us</a>
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="ar" aria-pressed="false" lang="ar">ع</button>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="grid-lines" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow" data-i18n="hero.eyebrow">Business software · Qatar</div>
+      <h1><span data-i18n="hero.h1a">Software that runs your business</span> <span class="hl" data-i18n="hero.h1b">and answers your questions.</span></h1>
+      <p class="sub" data-i18n="hero.sub">An ERP system for your operations, and Dalil, an AI assistant that answers from your company's own documents.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:lnedal44@gmail.com">
+          <span data-i18n="hero.cta">Contact us</span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="cta-note" data-i18n="hero.note">Arabic &amp; English · Made in Qatar</span>
+      </div>
+    </div>
+
+    <div class="visual" aria-hidden="true">
+      <div class="ops">
+        <div class="ops-head">
+          <span class="t" data-i18n="ops.title">Operations · this month</span>
+          <span class="dot"><i></i><i></i><i></i></span>
+        </div>
+        <div class="tiles">
+          <div class="tile"><div class="lb" data-i18n="ops.t1">Revenue</div><div class="vl">QAR 1.24M</div></div>
+          <div class="tile"><div class="lb" data-i18n="ops.t2">Projects</div><div class="vl">38</div></div>
+          <div class="tile"><div class="lb" data-i18n="ops.t3">Utilization</div><div class="vl">81%</div></div>
+        </div>
+        <div class="bars"><i style="height:52%"></i><i style="height:70%"></i><i style="height:44%"></i><i style="height:82%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:72%"></i><i style="height:84%"></i></div>
+      </div>
+
+      <div class="dalil-card">
+        <div class="dc-head">
+          <svg class="dm" viewBox="12 4 40 56.5" aria-hidden="true"><path d="M19 6H40L50 16V37C50 40.6 48.7 43.3 46.4 45.6L34.8 57.2C33.3 58.7 30.7 58.7 29.2 57.2L17.6 45.6C15.3 43.3 14 40.6 14 37V11C14 8.2 16.2 6 19 6Z" fill="#3433C4"/><path d="M40 6L50 16H43.5C41.6 16 40 14.4 40 12.5Z" fill="#93A3FB"/><rect x="21" y="18" width="13" height="3.5" rx="1.75" fill="#fff"/><rect x="21" y="25" width="22" height="6" rx="3" fill="#93A3FB"/><rect x="21" y="35" width="17" height="3.5" rx="1.75" fill="#fff"/></svg>
+          <span class="nm">Dalil<span>دليل</span></span>
+          <span class="live" data-i18n="dalil.live">Live</span>
+        </div>
+        <div class="q" data-i18n="dalil.q">What's the leave policy for new hires?</div>
+        <div class="a"><span data-i18n="dalil.a1">New employees accrue </span><span class="lit" data-i18n="dalil.a2">2.5 days of annual leave per month</span><span data-i18n="dalil.a3"> after a 3-month probation.</span></div>
+        <div class="cite">
+          <svg viewBox="0 0 12 14" fill="currentColor" aria-hidden="true"><path d="M2 0h6l4 4v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2Zm6 1v3h3"/></svg>
+          <span data-i18n="dalil.cite">Employee Handbook · p.12</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-i18n="prod.eyebrow">Products</div>
+      <h2 data-i18n="prod.h2">One platform, two jobs</h2>
+      <p data-i18n="prod.sub">A system that does the work, and an assistant that knows the answers — both in Arabic and English.</p>
+    </div>
+
+    <div class="cards">
+      <!-- ERP -->
+      <article class="card">
+        <span class="badge"></span>
+        <div class="kh">
+          <span class="m" style="background:#3433C4"><svg viewBox="0 0 40 40" width="26" aria-hidden="true"><path d="M13 29 L19.4 12 h1.2 L27 29 h-3.7 l-1.3-3.7 h-4 L16.7 29 Z M19.2 22.3 h1.6 L20 19.6 Z" fill="#fff"/></svg></span>
+          <h3><b>Apix</b><span class="onn">ONN</span> ERP</h3>
+        </div>
+        <p class="desc" data-i18n="erp.desc">One system for the whole business. Approvals, reporting, and an employee portal are built in, so your operations run in one place instead of a dozen spreadsheets.</p>
+        <ul class="erp-list">
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f1">Finance &amp; accounting</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f2">HR &amp; payroll</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f3">Projects</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f4">Inventory</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f5">Property</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 8 14l8-9"/></svg> <span data-i18n="erp.f6">Sales &amp; clients</span></li>
+        </ul>
+      </article>
+
+      <!-- DALIL -->
+      <article class="card">
+        <span class="badge"></span>
+        <div class="kh">
+          <span class="m" style="background:transparent; width:44px; height:44px"><svg viewBox="12 4 40 56.5" width="30" aria-hidden="true"><path d="M19 6H40L50 16V37C50 40.6 48.7 43.3 46.4 45.6L34.8 57.2C33.3 58.7 30.7 58.7 29.2 57.2L17.6 45.6C15.3 43.3 14 40.6 14 37V11C14 8.2 16.2 6 19 6Z" fill="#3433C4"/><path d="M40 6L50 16H43.5C41.6 16 40 14.4 40 12.5Z" fill="#93A3FB"/><rect x="21" y="18" width="13" height="3.5" rx="1.75" fill="#fff"/><rect x="21" y="25" width="22" height="6" rx="3" fill="#93A3FB"/><rect x="21" y="35" width="17" height="3.5" rx="1.75" fill="#fff"/></svg></span>
+          <h3>Dalil <span class="ar" lang="ar">دليل</span></h3>
+        </div>
+        <p class="desc" data-i18n="dalil.desc">Ask a question and get the answer from your own manuals, contracts, schedules, and emails — with <b>the exact page cited</b>. Everyone only sees the files they're allowed to.</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg><span data-i18n="dalil.c1">Arabic &amp; English</span></span>
+          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h7l4 4v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/></svg><span data-i18n="dalil.c2">Cites the page</span></span>
+          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2l6 3v5c0 4-3 6.5-6 8-3-1.5-6-4-6-8V5z"/></svg><span data-i18n="dalil.c3">Permission-aware</span></span>
+          <span class="chip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5A7.5 7.5 0 0 0 3.6 14L2.5 17.5 6 16.4A7.5 7.5 0 1 0 10 2.5Z"/></svg><span data-i18n="dalil.c4">Browser + WhatsApp</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-band">
+      <div class="contact-grid">
+        <div>
+          <h2 data-i18n="contact.h2">Let's talk</h2>
+          <p data-i18n="contact.sub">Tell us about your business and we'll show you how ApixONN and Dalil fit — in the browser, and on WhatsApp.</p>
+          <a class="btn btn-primary" href="mailto:lnedal44@gmail.com">
+            <span data-i18n="contact.cta">Contact us</span>
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="contact-info">
+          <a href="mailto:lnedal44@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            lnedal44@gmail.com
+          </a>
+          <span class="row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span data-i18n="contact.loc">Qatar</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site">
+  <div class="wrap foot">
+    <span class="fbrand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#3433C4"/><path d="M13 29 L19.4 12 h1.2 L27 29 h-3.7 l-1.3-3.7 h-4 L16.7 29 Z M19.2 22.3 h1.6 L20 19.6 Z" fill="#fff"/></svg>
+      ApixONN
+    </span>
+    <span class="fmeta">
+      <span data-i18n="footer.copy">© 2026 ApixONN, Qatar</span>
+      <span class="sep">·</span>
+      <a href="mailto:lnedal44@gmail.com">lnedal44@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const I18N = {
+    en: {
+      "nav.products":"Products","nav.contact":"Contact","nav.cta":"Contact us",
+      "hero.eyebrow":"Business software · Qatar",
+      "hero.h1a":"Software that runs your business","hero.h1b":"and answers your questions.",
+      "hero.sub":"An ERP system for your operations, and Dalil, an AI assistant that answers from your company's own documents.",
+      "hero.cta":"Contact us","hero.note":"Arabic & English · Made in Qatar",
+      "ops.title":"Operations · this month","ops.t1":"Revenue","ops.t2":"Projects","ops.t3":"Utilization",
+      "dalil.live":"Live","dalil.q":"What's the leave policy for new hires?",
+      "dalil.a1":"New employees accrue ","dalil.a2":"2.5 days of annual leave per month","dalil.a3":" after a 3-month probation.",
+      "dalil.cite":"Employee Handbook · p.12",
+      "prod.eyebrow":"Products","prod.h2":"One platform, two jobs",
+      "prod.sub":"A system that does the work, and an assistant that knows the answers — both in Arabic and English.",
+      "erp.desc":"One system for the whole business. Approvals, reporting, and an employee portal are built in, so your operations run in one place instead of a dozen spreadsheets.",
+      "erp.f1":"Finance & accounting","erp.f2":"HR & payroll","erp.f3":"Projects","erp.f4":"Inventory","erp.f5":"Property","erp.f6":"Sales & clients",
+      "dalil.desc":"Ask a question and get the answer from your own manuals, contracts, schedules, and emails — with the exact page cited. Everyone only sees the files they're allowed to.",
+      "dalil.c1":"Arabic & English","dalil.c2":"Cites the page","dalil.c3":"Permission-aware","dalil.c4":"Browser + WhatsApp",
+      "contact.h2":"Let's talk",
+      "contact.sub":"Tell us about your business and we'll show you how ApixONN and Dalil fit — in the browser, and on WhatsApp.",
+      "contact.cta":"Contact us","contact.loc":"Qatar",
+      "footer.copy":"© 2026 ApixONN, Qatar","footer.privacy":"Privacy policy"
+    },
+    ar: {
+      "nav.products":"المنتجات","nav.contact":"تواصل","nav.cta":"تواصل معنا",
+      "hero.eyebrow":"برمجيات للأعمال · قطر",
+      "hero.h1a":"برمجيات تُدير أعمالك","hero.h1b":"وتُجيب عن أسئلتك.",
+      "hero.sub":"نظام ERP لعملياتك، ومساعد ذكي «دليل» يُجيب من مستندات شركتك نفسها.",
+      "hero.cta":"تواصل معنا","hero.note":"بالعربية والإنجليزية · صُنع في قطر",
+      "ops.title":"العمليات · هذا الشهر","ops.t1":"الإيرادات","ops.t2":"المشاريع","ops.t3":"معدّل التشغيل",
+      "dalil.live":"مباشر","dalil.q":"ما سياسة الإجازات للموظفين الجدد؟",
+      "dalil.a1":"يستحق الموظفون الجدد ","dalil.a2":"٢٫٥ يوم إجازة سنوية شهريًا","dalil.a3":" بعد فترة تجربة مدتها ٣ أشهر.",
+      "dalil.cite":"دليل الموظف · صفحة ١٢",
+      "prod.eyebrow":"المنتجات","prod.h2":"منصّة واحدة، مهمّتان",
+      "prod.sub":"نظام يُنجز العمل، ومساعد يعرف الإجابات — كلاهما بالعربية والإنجليزية.",
+      "erp.desc":"نظام واحد لكامل الأعمال. الموافقات والتقارير وبوابة الموظفين مدمجة، لتُدار عملياتك في مكان واحد بدل عشرات الجداول.",
+      "erp.f1":"المالية والمحاسبة","erp.f2":"الموارد البشرية والرواتب","erp.f3":"المشاريع","erp.f4":"المخزون","erp.f5":"العقارات","erp.f6":"المبيعات والعملاء",
+      "dalil.desc":"اسأل سؤالًا واحصل على الإجابة من أدلتك وعقودك وجداولك وبريدك — مع الإشارة إلى الصفحة بالضبط. كل شخص يرى فقط الملفات المسموح له بها.",
+      "dalil.c1":"العربية والإنجليزية","dalil.c2":"يُشير إلى الصفحة","dalil.c3":"يحترم الصلاحيات","dalil.c4":"المتصفح وواتساب",
+      "contact.h2":"لنتحدّث",
+      "contact.sub":"أخبرنا عن أعمالك وسنُريك كيف يناسبك ApixONN و«دليل» — في المتصفح وعلى واتساب.",
+      "contact.cta":"تواصل معنا","contact.loc":"قطر",
+      "footer.copy":"© ٢٠٢٦ ApixONN، قطر","footer.privacy":"سياسة الخصوصية"
+    }
+  };
+  function applyLang(lang){
+    const dict = I18N[lang] || I18N.en;
+    const html = document.documentElement;
+    html.lang = lang; html.dir = lang === 'ar' ? 'rtl' : 'ltr'; html.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-set-lang]').forEach(b=>{
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+    });
+    try{ localStorage.setItem('apx_lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(b=>{
+    b.addEventListener('click', ()=> applyLang(b.getAttribute('data-set-lang')));
+  });
+  let start = 'en';
+  try{ const s = localStorage.getItem('apx_lang'); if (s === 'ar' || s === 'en') start = s; }catch(e){}
+  if (start !== 'en') applyLang(start);
+</script>
+</body>
+</html>
