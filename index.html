@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=20261007c">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -82,10 +82,7 @@
       <a href="#dalil">Dalil</a>
     </nav>
     <div class="nav-end">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="ar" aria-pressed="false" lang="ar">ع</button>
-      </div>
+      <button type="button" class="lang-switch" data-lang-switch lang="ar" aria-label="Switch to Arabic">عربي</button>
       <a class="btn btn-ghost btn-sm" href="#demo" data-open-demo data-i18n="cta.demo">Book a demo</a>
       <a class="btn btn-primary btn-sm" href="start.html" data-i18n="cta.trialShort">Start free trial</a>
       <button class="burger" type="button" aria-label="Open menu" aria-controls="mm" aria-expanded="false" data-menu-open><svg><use href="#i-menu"/></svg></button>
@@ -107,10 +104,7 @@
     <a href="#dalil" data-menu-link>Dalil</a>
   </nav>
   <div class="mm-cta">
-    <div class="lang" role="group" aria-label="Language" style="justify-self:start">
-      <button type="button" data-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-lang="ar" aria-pressed="false" lang="ar">ع</button>
-    </div>
+    <button type="button" class="lang-switch" data-lang-switch lang="ar" aria-label="Switch to Arabic" style="justify-self:start">عربي</button>
     <a class="btn btn-ghost btn-lg" href="#demo" data-open-demo data-i18n="cta.demo">Book a demo</a>
     <a class="btn btn-primary btn-lg" href="start.html" data-i18n="cta.trial">Start 14-day free trial</a>
   </div>
@@ -712,7 +706,7 @@
           <b>dalil<span lang="ar">دليل</span></b>
           <div class="dl-lang" role="group" aria-label="Demo language">
             <button type="button" data-dl="en" aria-pressed="true">EN</button>
-            <button type="button" data-dl="ar" aria-pressed="false" lang="ar">ع</button>
+            <button type="button" data-dl="ar" aria-pressed="false" lang="ar">عربي</button>
           </div>
         </div>
         <div class="dl-msgs" id="dlmsgs" aria-live="polite"></div>
@@ -801,10 +795,7 @@
     </div>
     <div class="f-bar">
       <span data-i18n="ft.copy">© 2026 ApixONN. All rights reserved.</span>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="ar" aria-pressed="false" lang="ar">ع</button>
-      </div>
+      <button type="button" class="lang-switch" data-lang-switch lang="ar" aria-label="Switch to Arabic">عربي</button>
     </div>
     <div class="f-giant" aria-hidden="true">ApixONN</div>
   </div>
@@ -867,6 +858,6 @@
   </div>
 </div>
 
-<script src="assets/site.js?v=20261007" defer></script>
+<script src="assets/site.js?v=20261007c" defer></script>
 </body>
 </html>

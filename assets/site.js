@@ -212,15 +212,19 @@
       const key = el.getAttribute('data-i18n-ph');
       el.setAttribute('placeholder', lang === 'ar' && dict[key] != null ? dict[key] : el.dataset.enPh);
     });
-    $$('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    const other = lang === 'ar' ? 'en' : 'ar';
+    $$('[data-lang-switch]').forEach((b) => {
+      b.textContent = other === 'ar' ? 'عربي' : 'English';
+      b.setAttribute('lang', other);
+      b.setAttribute('aria-label', other === 'ar' ? 'التبديل إلى العربية' : 'Switch to English');
+    });
     try { localStorage.setItem('apx_lang', lang); } catch (e) { /* storage unavailable */ }
     listeners.forEach((fn) => fn(lang));
   }
   window.APX.applyLang = applyLang;
 
   document.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-lang]');
-    if (b) applyLang(b.dataset.lang);
+    if (e.target.closest('[data-lang-switch]')) applyLang(lang === 'ar' ? 'en' : 'ar');
   });
 
   /* The public domain shown in [data-domain] spans is now hard-coded in the HTML
