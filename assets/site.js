@@ -156,7 +156,7 @@
     'fq.q7': 'هل بياناتنا آمنة؟',
     'fq.a7': 'كل مساحة عمل معزولة، والوصول قائم على الأدوار، والعمليات الحساسة تُسجَّل في سجل تدقيق. ويمكن لعملاء المؤسسات اختيار سحابة خاصة أو استضافة ذاتية.',
     'fq.q8': 'أين أتعلم كيف يعمل كل شيء؟',
-    'fq.a8': 'في <a href="https://docs.dev.apixonn.com/" target="_blank" rel="noopener">التوثيق</a> — أدلة خطوة بخطوة لكل شاشة دون تسجيل دخول. وتفاصيل الباقات كاملة في <a href="https://plans.dev.apixonn.com/" target="_blank" rel="noopener">صفحة الأسعار</a>.',
+    'fq.a8': 'في <a href="https://docs.dev.apixonn.com/" target="_blank" rel="noopener">التوثيق</a> — أدلة خطوة بخطوة لكل شاشة دون تسجيل دخول. وتفاصيل الباقات كاملة في <a href="compare.html" target="_blank" rel="noopener">صفحة الأسعار</a>.',
     'fn.eyebrow': '١٤ يومًا مجانًا · دون بطاقة ائتمان',
     'fn.h2': 'احجز مساحة عملك <span class="serif grad-text">في أقل من دقيقة.</span>',
     'fn.sub': 'اختر عنوانك، وسنجهّز لك مساحة ApixONN خاصة مع تفعيل جميع الوحدات.',
