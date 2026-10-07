@@ -99,7 +99,7 @@
       if (id !== slugReq) return;
       const d = await res.json().catch(() => null);
       if (!res.ok || !d) throw new Error('bad');
-      if (d.available) { setSlugState('ok', icoOk + t('avail', `${s}.${APX.tenantDomain}`)); slugOk = true; }
+      if (d.available) { setSlugState('ok', icoOk + t('avail', `${s}.${APX.displayDomain}`)); slugOk = true; }
       else {
         slugOk = false;
         const sug = d.suggestion ? ` ${t('tryIt')} <button type="button" data-sug="${d.suggestion}">${d.suggestion}</button>?` : '';
@@ -237,7 +237,7 @@
   const prov = $('#prov');
   const provList = $('#provList');
   function openProv() {
-    const d = `${els.slug.value}.${APX.tenantDomain}`;
+    const d = `${els.slug.value}.${APX.displayDomain}`;
     $('#provTitle').textContent = t('building', els.company.value.trim());
     $('#provSub').textContent = d;
     provList.innerHTML = t('steps', d).map((s) => `<li><span class="ic"><svg><use href="#i-check"/></svg></span><span>${s}</span></li>`).join('');

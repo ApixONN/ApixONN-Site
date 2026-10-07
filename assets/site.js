@@ -4,7 +4,8 @@
   'use strict';
 
   const CONFIG = {
-    tenantDomain: 'dev.apixonn.com',
+    tenantDomain: 'dev.apixonn.com',   // the real, working workspace domain (functional)
+    displayDomain: 'apixonn.com',      // what we SHOW publicly - the .dev stays internal
     api: 'https://ops.dev.apixonn.com/api/v1',
   };
   window.APX = CONFIG;
@@ -141,7 +142,7 @@
     'dl.cta': 'اطلب الوصول إلى دليل', 'dl.cta2': 'اطرح سؤالًا', 'dl.ask': 'اسأل أي شيء عن مستنداتك…',
     'fq.h2': 'أسئلة، وإجاباتها.',
     'fq.q1': 'ماذا يحدث عندما أبدأ التجربة المجانية؟',
-    'fq.a1': 'تحصل على مساحة عمل خاصة بعنوانك — مثل acme.dev.apixonn.com — مع تفعيل جميع الوحدات لمدة ١٤ يومًا. أنت المسؤول: ادعُ فريقك، واستورد بياناتك، واستكشف. دون بطاقة ائتمان.',
+    'fq.a1': 'تحصل على مساحة عمل خاصة بعنوانك — مثل acme.apixonn.com — مع تفعيل جميع الوحدات لمدة ١٤ يومًا. أنت المسؤول: ادعُ فريقك، واستورد بياناتك، واستكشف. دون بطاقة ائتمان.',
     'fq.q2': 'ماذا يحدث عند انتهاء الأيام الأربعة عشر؟',
     'fq.a2': 'اختر باقة للاستمرار. وإن لم تفعل، تصبح المساحة للقراءة فقط — لا يُحذف شيء، ويمكنك الاشتراك لاحقًا لتكمل من حيث توقفت.',
     'fq.q3': 'هل يعمل النظام بالعربية بالكامل فعلًا؟',
@@ -223,7 +224,7 @@
   });
 
   /* tenant domain everywhere */
-  $$('[data-domain]').forEach((el) => { el.textContent = CONFIG.tenantDomain; });
+  $$('[data-domain]').forEach((el) => { el.textContent = CONFIG.displayDomain; });
 
   /* ------------------------------------------------------------------ */
   /* nav                                                                 */
