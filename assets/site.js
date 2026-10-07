@@ -113,9 +113,9 @@
     'ep.l3': 'قسائم الرواتب والمستندات', 'ep.l3p': 'نزّل قسائم الراتب، وارفع المستندات، وتابع المهام.',
     'ep.cta': 'استكشف دليل البوابة',
     'pr.eyebrow': 'الأسعار', 'pr.h2': 'أسعار معلنة. <span class="serif grad-text">دون رسوم منصة.</span>',
-    'pr.sub': 'كل باقة تشمل ٣ مستخدمين — وأضف المقاعد متى شئت. ابدأ بتجربة مجانية لكل شيء لمدة ١٤ يومًا.',
+    'pr.sub': 'تشمل كل باقة عددًا من المستخدمين — أضف المزيد متى شئت. ابدأ بتجربة مجانية لكل شيء لمدة ١٤ يومًا.',
     'pr.monthly': 'شهري', 'pr.yearly': 'سنوي',
-    'pr.p1t': 'الموارد البشرية الأساسية', 'pr.p1d': 'للفرق الصغيرة التي تنظّم شؤون الموظفين والوقت.', 'pr.mo': '/شهريًا', 'pr.incl': 'تشمل ٣ مستخدمين', 'pr.extra': 'لكل مستخدم إضافي',
+    'pr.p1t': 'الموارد البشرية الأساسية', 'pr.p1d': 'للفرق الصغيرة التي تنظّم شؤون الموظفين والوقت.', 'pr.mo': '/شهريًا', 'pr.incl': 'تشمل', 'pr.users': 'مستخدمين', 'pr.extra': 'لكل مستخدم إضافي',
     'pr.p1a': 'الموارد البشرية والهيكل والإجازات والحضور', 'pr.p1b': 'الجداول الزمنية والموافقات', 'pr.p1c': 'بوابة الخدمة الذاتية للموظفين', 'pr.p1d2': 'فوترة ومصروفات أساسية',
     'pr.start': 'ابدأ التجربة المجانية', 'pr.pop': 'الأكثر طلبًا',
     'pr.p2t': 'العمليات والمشاريع', 'pr.p2d': 'لفرق الخدمات التي تدير العملاء والمشاريع.',
@@ -394,13 +394,48 @@
   }));
 
   /* ------------------------------------------------------------------ */
-  /* pricing toggle                                                      */
+  /* pricing: monthly/yearly toggle + live plans from OPS                */
   /* ------------------------------------------------------------------ */
-  $$('[data-bill]').forEach((b) => b.addEventListener('click', () => {
-    const yearly = b.dataset.bill === 'yearly';
-    $$('[data-bill]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  const billIsYearly = () => {
+    const y = $('[data-bill="yearly"]');
+    return !!y && y.getAttribute('aria-pressed') === 'true';
+  };
+  // Swap every price span (amount + extra-seat) to the active period.
+  const applyBill = () => {
+    const yearly = billIsYearly();
     $$('.plans [data-m]').forEach((el) => { el.textContent = yearly ? el.dataset.y : el.dataset.m; });
+  };
+  $$('[data-bill]').forEach((b) => b.addEventListener('click', () => {
+    $$('[data-bill]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    applyBill();
   }));
+
+  /* Hydrate the price cards from the live OPS plans, so a re-price in the
+     console (Billing / Pricing Studio) flows straight to the site with no
+     redeploy. The HTML already carries the current numbers, so a failed or
+     blocked fetch just leaves the correct static prices in place. Enterprise
+     stays "Let's talk". Annual = −20%, matching the toggle badge. */
+  (function hydratePlans() {
+    const YEARLY = 0.8;
+    const money = (n) => String(Math.round(n));
+    fetch(`${CONFIG.api}/public/plans`, { headers: { Accept: 'application/json' } })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((body) => {
+        ((body && body.data) || []).forEach((p) => {
+          if (p.code === 'enterprise') return;
+          const card = $(`.plans [data-plan="${p.code}"]`);
+          if (!card) return;
+          const amt = card.querySelector('.amt');
+          if (amt && p.base_price != null) { amt.dataset.m = money(p.base_price); amt.dataset.y = money(p.base_price * YEARLY); }
+          const seats = card.querySelector('[data-seats]');
+          if (seats && p.base_seats != null) seats.textContent = String(p.base_seats);
+          const xseat = card.querySelector('.xseat');
+          if (xseat && p.seat_price != null) { xseat.dataset.m = money(p.seat_price); xseat.dataset.y = money(p.seat_price * YEARLY); }
+        });
+        applyBill();
+      })
+      .catch(() => { /* keep the static HTML prices */ });
+  })();
 
   /* ------------------------------------------------------------------ */
   /* FAQ                                                                 */

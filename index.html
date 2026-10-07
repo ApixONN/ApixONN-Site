@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261007c">
+<link rel="stylesheet" href="assets/site.css?v=20261007d">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -575,18 +575,18 @@
     <div class="sec-head center rv">
       <span class="eyebrow" data-i18n="pr.eyebrow">Pricing</span>
       <h2 class="h2" data-i18n="pr.h2">Published prices. <span class="serif grad-text">No platform fee.</span></h2>
-      <p class="lead" data-i18n="pr.sub">Every plan includes 3 users — add seats any time. Start with a 14-day free trial of everything.</p>
+      <p class="lead" data-i18n="pr.sub">Each plan includes a set number of users — add more any time. Start with a 14-day free trial of everything.</p>
       <div class="bill-toggle" role="group" aria-label="Billing period">
         <button type="button" data-bill="monthly" aria-pressed="true" data-i18n="pr.monthly">Monthly</button>
         <button type="button" data-bill="yearly" aria-pressed="false"><span data-i18n="pr.yearly">Yearly</span><span class="save">−20%</span></button>
       </div>
     </div>
     <div class="plans">
-      <div class="plan rv">
+      <div class="plan rv" data-plan="starter">
         <div class="pn">Starter</div><div class="pt" data-i18n="pr.p1t">Core HR</div>
         <p class="pd" data-i18n="pr.p1d">Small teams getting people and time in order.</p>
-        <div class="price"><span class="cur">$</span><span class="amt" data-m="59" data-y="47">59</span><span class="per" data-i18n="pr.mo">/mo</span></div>
-        <div class="seat"><span data-i18n="pr.incl">incl. 3 users</span> · <b>+$<span data-m="14" data-y="11">14</span></b> <span data-i18n="pr.extra">per extra user</span></div>
+        <div class="price"><span class="cur">$</span><span class="amt" data-m="99" data-y="79">99</span><span class="per" data-i18n="pr.mo">/mo</span></div>
+        <div class="seat"><span data-i18n="pr.incl">incl.</span> <b data-seats>5</b> <span data-i18n="pr.users">users</span> · <b>+$<span class="xseat" data-m="15" data-y="12">15</span></b> <span data-i18n="pr.extra">per extra user</span></div>
         <ul>
           <li><svg><use href="#i-check"/></svg><span data-i18n="pr.p1a">HR, org, leave &amp; attendance</span></li>
           <li><svg><use href="#i-check"/></svg><span data-i18n="pr.p1b">Timesheets &amp; approvals</span></li>
@@ -595,12 +595,12 @@
         </ul>
         <a class="btn btn-ghost btn-block" href="start.html?plan=starter" data-i18n="pr.start">Start free trial</a>
       </div>
-      <div class="plan pop rv d1">
+      <div class="plan pop rv d1" data-plan="professional">
         <span class="badge" data-i18n="pr.pop">Most popular</span>
         <div class="pn">Professional</div><div class="pt" data-i18n="pr.p2t">Ops &amp; projects</div>
         <p class="pd" data-i18n="pr.p2d">Services teams running clients and projects.</p>
-        <div class="price"><span class="cur">$</span><span class="amt" data-m="149" data-y="119">149</span><span class="per" data-i18n="pr.mo">/mo</span></div>
-        <div class="seat"><span data-i18n="pr.incl">incl. 3 users</span> · <b>+$<span data-m="36" data-y="29">36</span></b> <span data-i18n="pr.extra">per extra user</span></div>
+        <div class="price"><span class="cur">$</span><span class="amt" data-m="349" data-y="279">349</span><span class="per" data-i18n="pr.mo">/mo</span></div>
+        <div class="seat"><span data-i18n="pr.incl">incl.</span> <b data-seats>10</b> <span data-i18n="pr.users">users</span> · <b>+$<span class="xseat" data-m="18" data-y="14">18</span></b> <span data-i18n="pr.extra">per extra user</span></div>
         <ul>
           <li><svg><use href="#i-check"/></svg><span data-i18n="pr.p2a">Everything in Starter</span></li>
           <li><svg><use href="#i-check"/></svg><span data-i18n="pr.p2b">Projects, resources &amp; demand</span></li>
@@ -610,11 +610,11 @@
         </ul>
         <a class="btn btn-primary btn-block" href="start.html?plan=professional" data-i18n="pr.start">Start free trial</a>
       </div>
-      <div class="plan rv d2">
+      <div class="plan rv d2" data-plan="business">
         <div class="pn">Business</div><div class="pt" data-i18n="pr.p3t">Full ERP</div>
         <p class="pd" data-i18n="pr.p3d">Companies running payroll and inventory in-house.</p>
-        <div class="price"><span class="cur">$</span><span class="amt" data-m="259" data-y="207">259</span><span class="per" data-i18n="pr.mo">/mo</span></div>
-        <div class="seat"><span data-i18n="pr.incl">incl. 3 users</span> · <b>+$<span data-m="62" data-y="50">62</span></b> <span data-i18n="pr.extra">per extra user</span></div>
+        <div class="price"><span class="cur">$</span><span class="amt" data-m="699" data-y="559">699</span><span class="per" data-i18n="pr.mo">/mo</span></div>
+        <div class="seat"><span data-i18n="pr.incl">incl.</span> <b data-seats>25</b> <span data-i18n="pr.users">users</span> · <b>+$<span class="xseat" data-m="15" data-y="12">15</span></b> <span data-i18n="pr.extra">per extra user</span></div>
         <ul>
           <li><svg><use href="#i-check"/></svg><span data-i18n="pr.p3a">Everything in Professional</span></li>
           <li><svg><use href="#i-check"/></svg><span data-i18n="pr.p3b">Payroll with statutory rules</span></li>
@@ -624,7 +624,7 @@
         </ul>
         <a class="btn btn-ghost btn-block" href="start.html?plan=business" data-i18n="pr.start">Start free trial</a>
       </div>
-      <div class="plan rv d3">
+      <div class="plan rv d3" data-plan="enterprise">
         <div class="pn">Enterprise</div><div class="pt" data-i18n="pr.p4t">Scale &amp; control</div>
         <p class="pd" data-i18n="pr.p4d">Groups needing governance, SSO or self-hosting.</p>
         <div class="price custom"><span class="amt" data-i18n="pr.talk">Let's talk</span></div>
@@ -858,6 +858,6 @@
   </div>
 </div>
 
-<script src="assets/site.js?v=20261007c" defer></script>
+<script src="assets/site.js?v=20261007d" defer></script>
 </body>
 </html>
