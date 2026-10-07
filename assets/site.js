@@ -223,8 +223,8 @@
     if (b) applyLang(b.dataset.lang);
   });
 
-  /* tenant domain everywhere */
-  $$('[data-domain]').forEach((el) => { el.textContent = CONFIG.displayDomain; });
+  /* The public domain shown in [data-domain] spans is now hard-coded in the HTML
+     (apixonn.com); no JS overwrite, so a stale cached script can never revert it. */
 
   /* ------------------------------------------------------------------ */
   /* nav                                                                 */
